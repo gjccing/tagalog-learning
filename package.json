@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "audio:generate": "node scripts/generate-audio.mjs"
+    "audio:generate": "node scripts/generate-audio.mjs",
+    "anki:generate": "node scripts/generate-apkg.mjs"
   },
   "dependencies": {
     "next": "16.3.5",
@@ -22,6 +23,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "jszip": "^3.10.2",
+    "sql.js": "^1.14.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
