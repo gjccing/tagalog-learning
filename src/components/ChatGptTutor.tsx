@@ -1,15 +1,13 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import { t, type Dictionary, type Locale } from "@/lib/i18n";
+import { t, type Dictionary } from "@/lib/i18n";
 
 export function ChatGptTutor({
   href,
-  lang,
   dict,
 }: {
   href: string;
-  lang: Locale;
   dict: Dictionary;
 }) {
   const [open, setOpen] = useState(false);
@@ -67,7 +65,7 @@ export function ChatGptTutor({
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="relative z-10 w-full max-w-lg rounded-2xl border border-border bg-card p-6 shadow-lg"
+            className="relative z-10 w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-lg"
           >
             <div className="flex items-start justify-between gap-4">
               <h3
@@ -94,22 +92,6 @@ export function ChatGptTutor({
                 )}
               </li>
             </ol>
-            <video
-              className="mt-4 w-full rounded-xl bg-foreground/5"
-              controls
-              playsInline
-              preload="metadata"
-              aria-label={t(dict, "How to change the ChatGPT voice language")}
-            >
-              <source
-                src={`/videos/chatgpt-voice-language-${lang}.mp4`}
-                type="video/mp4"
-              />
-              <source
-                src={`/videos/chatgpt-voice-language-${lang}.mov`}
-                type="video/quicktime"
-              />
-            </video>
             <a
               href={href}
               target="_blank"

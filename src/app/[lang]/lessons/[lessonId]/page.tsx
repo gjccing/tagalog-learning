@@ -121,7 +121,7 @@ export default async function LessonPage({
           {t(dict, "Practice")}
         </h2>
         <div className={apkgHref ? "grid gap-3 sm:grid-cols-2" : undefined}>
-          <ChatGptTutor href={tutorHref} lang={lang} dict={dict} />
+          <ChatGptTutor href={tutorHref} dict={dict} />
           {apkgHref ? <AnkiDownload href={apkgHref} dict={dict} /> : null}
         </div>
       </section>
