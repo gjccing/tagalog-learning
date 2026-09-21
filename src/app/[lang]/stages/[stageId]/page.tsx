@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { LessonListStatus } from "@/components/LessonListStatus";
-import { StageProgressSummary } from "@/components/StageProgressSummary";
 import {
   getCurriculum,
   getStage,
@@ -79,10 +77,6 @@ export default async function StagePage({
           {t(dict, stage.title)}
         </h1>
         <p className="max-w-2xl text-lg text-muted">{t(dict, stage.goal)}</p>
-        <StageProgressSummary
-          dict={dict}
-          lessonIds={stage.lessons.map((lesson) => lesson.id)}
-        />
       </div>
 
       <ol className="space-y-3">
@@ -92,12 +86,9 @@ export default async function StagePage({
               href={withLang(lang, `/lessons/${lesson.id}`)}
               className="block rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-accent"
             >
-              <div className="flex items-start justify-between gap-4">
-                <p className="text-sm text-muted">
-                  {t(dict, "Lesson {n}", { n: lessonNumberFromId(lesson.id) })}
-                </p>
-                <LessonListStatus lessonId={lesson.id} dict={dict} />
-              </div>
+              <p className="text-sm text-muted">
+                {t(dict, "Lesson {n}", { n: lessonNumberFromId(lesson.id) })}
+              </p>
               <h2 className="mt-1 text-xl font-semibold tracking-tight">
                 {t(dict, lesson.title)}
               </h2>
