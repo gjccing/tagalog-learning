@@ -1,0 +1,64 @@
+{
+  "id": "lesson-7",
+  "stage": 1,
+  "level": "A0",
+  "title": "Drinking",
+  "goal": "Talk about drinking and basic drink needs.",
+  "vocabulary": [
+    {
+      "tagalog": "uminom",
+      "english": "to drink / drank"
+    },
+    {
+      "tagalog": "tubig",
+      "english": "water"
+    },
+    {
+      "tagalog": "kape",
+      "english": "coffee"
+    },
+    {
+      "tagalog": "tsaa",
+      "english": "tea"
+    },
+    {
+      "tagalog": "gatas",
+      "english": "milk"
+    },
+    {
+      "tagalog": "mainit",
+      "english": "hot"
+    },
+    {
+      "tagalog": "malamig",
+      "english": "cold"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Uminom ako ng tubig.",
+      "english": "I drank water."
+    },
+    {
+      "tagalog": "Uminom ako ng kape.",
+      "english": "I drank coffee."
+    },
+    {
+      "tagalog": "Uminom ako ng tsaa.",
+      "english": "I drank tea."
+    },
+    {
+      "tagalog": "Uminom ako ng gatas.",
+      "english": "I drank milk."
+    },
+    {
+      "tagalog": "Mainit ang kape.",
+      "english": "The coffee is hot."
+    },
+    {
+      "tagalog": "Malamig ang tubig.",
+      "english": "The water is cold."
+    }
+  ],
+  "notes": []
+}

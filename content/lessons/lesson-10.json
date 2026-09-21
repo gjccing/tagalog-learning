@@ -1,0 +1,60 @@
+{
+  "id": "lesson-10",
+  "stage": 1,
+  "level": "A0",
+  "title": "Can I?",
+  "goal": "Ask for permission and understand simple permission responses.",
+  "vocabulary": [
+    {
+      "tagalog": "puwede",
+      "english": "can / allowed / possible"
+    },
+    {
+      "tagalog": "dito",
+      "english": "here"
+    },
+    {
+      "tagalog": "doon",
+      "english": "there"
+    },
+    {
+      "tagalog": "umupo",
+      "english": "to sit"
+    },
+    {
+      "tagalog": "pumasok",
+      "english": "to enter / come in"
+    },
+    {
+      "tagalog": "gumamit",
+      "english": "to use"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Puwede ba?",
+      "english": "Can I? / Is it allowed?"
+    },
+    {
+      "tagalog": "Puwede.",
+      "english": "Yes, you can. / It is allowed."
+    },
+    {
+      "tagalog": "Hindi puwede.",
+      "english": "You can't. / It is not allowed."
+    },
+    {
+      "tagalog": "Puwede ba akong umupo dito?",
+      "english": "Can I sit here?"
+    },
+    {
+      "tagalog": "Puwede ba akong pumasok?",
+      "english": "Can I come in?"
+    },
+    {
+      "tagalog": "Puwede ko bang gamitin ito?",
+      "english": "Can I use this?"
+    }
+  ],
+  "notes": []
+}

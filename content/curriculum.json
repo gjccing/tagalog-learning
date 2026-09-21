@@ -1,0 +1,85 @@
+{
+  "course": {
+    "id": "tagalog-a0-a2",
+    "title": "Practical Tagalog for Adult Immigrants",
+    "goal": "Develop practical Tagalog skills from A0 to A2 for handling everyday life independently."
+  },
+  "stages": [
+    {
+      "id": 0,
+      "title": "Sound Foundation",
+      "level": "Pre-A0",
+      "goal": "Recognize the basic sounds of Tagalog and attempt to pronounce simple words from their spelling.",
+      "lessons": [
+        {
+          "id": "lesson-0",
+          "title": "Tagalog Sounds",
+          "goal": "Recognize and pronounce the basic Tagalog vowels and consonants."
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Immediate Survival",
+      "level": "A0",
+      "goal": "Handle basic everyday reactions, needs, misunderstandings, requests, and simple interactions.",
+      "lessons": [
+        {
+          "id": "lesson-1",
+          "title": "Hello and Introductions",
+          "goal": "Greet someone and give a very simple introduction."
+        },
+        {
+          "id": "lesson-2",
+          "title": "Yes, No, and Okay",
+          "goal": "Respond to simple questions and situations."
+        },
+        {
+          "id": "lesson-3",
+          "title": "Thanks, Sorry, and Goodbye",
+          "goal": "Use essential polite expressions in everyday interactions."
+        },
+        {
+          "id": "lesson-4",
+          "title": "I Don't Understand",
+          "goal": "Tell someone you do not understand and ask them to repeat or slow down."
+        },
+        {
+          "id": "lesson-5",
+          "title": "Me, You, and Them",
+          "goal": "Refer to yourself and other people in simple everyday sentences."
+        },
+        {
+          "id": "lesson-6",
+          "title": "Eating",
+          "goal": "Talk about eating and basic food needs."
+        },
+        {
+          "id": "lesson-7",
+          "title": "Drinking",
+          "goal": "Talk about drinking and basic drink needs."
+        },
+        {
+          "id": "lesson-8",
+          "title": "I Want",
+          "goal": "Express what you want and ask what another person wants."
+        },
+        {
+          "id": "lesson-9",
+          "title": "I Don't Want",
+          "goal": "Refuse or express that you do not want something."
+        },
+        {
+          "id": "lesson-010",
+          "title": "Can I?",
+          "goal": "Ask for permission and understand simple permission responses."
+        },
+        {
+          "id": "lesson-011",
+          "title": "Please Help Me",
+          "goal": "Ask another person for basic help."
+        }
+      ]
+    }
+  ]
+}

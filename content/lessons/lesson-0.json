@@ -1,0 +1,185 @@
+{
+  "id": "lesson-0",
+  "stage": 0,
+  "level": "Pre-A0",
+  "title": "Tagalog Sounds",
+  "goal": "Recognize and pronounce the basic Tagalog vowels and consonants.",
+  "sections": [
+    {
+      "id": "vowels",
+      "title": "Vowels",
+      "instruction": "Listen to each sound and repeat the example words.",
+      "items": [
+        {
+          "sound": "a",
+          "examples": [
+            { "word": "ako", "position": "start", "highlight": "a" },
+            { "word": "bahay", "position": "middle", "highlight": "a" },
+            { "word": "bata", "position": "end", "highlight": "a" }
+          ]
+        },
+        {
+          "sound": "e",
+          "examples": [
+            { "word": "ewan", "position": "start", "highlight": "e" },
+            { "word": "pera", "position": "middle", "highlight": "e" },
+            { "word": "sige", "position": "end", "highlight": "e" }
+          ]
+        },
+        {
+          "sound": "i",
+          "examples": [
+            { "word": "ikaw", "position": "start", "highlight": "i" },
+            { "word": "hindi", "position": "middle", "highlight": "i" },
+            { "word": "gabi", "position": "end", "highlight": "i" }
+          ]
+        },
+        {
+          "sound": "o",
+          "examples": [
+            { "word": "oo", "position": "start", "highlight": "o" },
+            { "word": "trabaho", "position": "middle", "highlight": "o" },
+            { "word": "gusto", "position": "end", "highlight": "o" }
+          ]
+        },
+        {
+          "sound": "u",
+          "examples": [
+            { "word": "uwi", "position": "start", "highlight": "u" },
+            { "word": "tubig", "position": "middle", "highlight": "u" }
+          ],
+          "note": "Final u is uncommon in native Tagalog words."
+        }
+      ],
+      "note": "Tagalog vowels are generally consistent. Focus on copying the audio."
+    },
+    {
+      "id": "consonants",
+      "title": "Consonants",
+      "instruction": "Listen to each sound and repeat the example words.",
+      "items": [
+        {
+          "sound": "b",
+          "examples": [
+            { "word": "bahay", "position": "start", "highlight": "b" },
+            { "word": "babae", "position": "middle", "highlight": "b" }
+          ],
+          "note": "Final b is uncommon in native Tagalog words."
+        },
+        {
+          "sound": "d",
+          "examples": [
+            { "word": "dito", "position": "start", "highlight": "d" },
+            { "word": "madali", "position": "middle", "highlight": "d" },
+            { "word": "pagod", "position": "end", "highlight": "d" }
+          ]
+        },
+        {
+          "sound": "g",
+          "examples": [
+            { "word": "gabi", "position": "start", "highlight": "g" },
+            { "word": "pagod", "position": "middle", "highlight": "g" },
+            { "word": "ilog", "position": "end", "highlight": "g" }
+          ]
+        },
+        {
+          "sound": "h",
+          "examples": [
+            { "word": "hindi", "position": "start", "highlight": "h" },
+            { "word": "bahay", "position": "middle", "highlight": "h" }
+          ],
+          "note": "Final h is uncommon in native Tagalog words."
+        },
+        {
+          "sound": "k",
+          "examples": [
+            { "word": "kain", "position": "start", "highlight": "k" },
+            { "word": "ako", "position": "middle", "highlight": "k" },
+            { "word": "anak", "position": "end", "highlight": "k" }
+          ]
+        },
+        {
+          "sound": "l",
+          "examples": [
+            { "word": "lalaki", "position": "start", "highlight": "l" },
+            { "word": "salamat", "position": "middle", "highlight": "l" },
+            { "word": "mahal", "position": "end", "highlight": "l" }
+          ]
+        },
+        {
+          "sound": "m",
+          "examples": [
+            { "word": "mabuti", "position": "start", "highlight": "m" },
+            { "word": "kamay", "position": "middle", "highlight": "m" },
+            { "word": "inom", "position": "end", "highlight": "m" }
+          ]
+        },
+        {
+          "sound": "n",
+          "examples": [
+            { "word": "nanay", "position": "start", "highlight": "n" },
+            { "word": "anak", "position": "middle", "highlight": "n" },
+            { "word": "kain", "position": "end", "highlight": "n" }
+          ]
+        },
+        {
+          "sound": "ng",
+          "examples": [
+            { "word": "ngayon", "position": "start", "highlight": "ng" },
+            { "word": "pangalan", "position": "middle", "highlight": "ng" },
+            { "word": "kulang", "position": "end", "highlight": "ng" }
+          ],
+          "note": "Treat ng as one sound. Do not pronounce n and g separately."
+        },
+        {
+          "sound": "p",
+          "examples": [
+            { "word": "pera", "position": "start", "highlight": "p" },
+            { "word": "apat", "position": "middle", "highlight": "p" },
+            { "word": "sarap", "position": "end", "highlight": "p" }
+          ]
+        },
+        {
+          "sound": "r",
+          "examples": [
+            { "word": "rito", "position": "start", "highlight": "r" },
+            { "word": "pera", "position": "middle", "highlight": "r" }
+          ],
+          "note": "Final r is uncommon in native Tagalog words."
+        },
+        {
+          "sound": "s",
+          "examples": [
+            { "word": "salamat", "position": "start", "highlight": "s" },
+            { "word": "isa", "position": "middle", "highlight": "s" },
+            { "word": "taas", "position": "end", "highlight": "s" }
+          ]
+        },
+        {
+          "sound": "t",
+          "examples": [
+            { "word": "tubig", "position": "start", "highlight": "t" },
+            { "word": "ate", "position": "middle", "highlight": "t" },
+            { "word": "apat", "position": "end", "highlight": "t" }
+          ]
+        },
+        {
+          "sound": "w",
+          "examples": [
+            { "word": "wala", "position": "start", "highlight": "w" },
+            { "word": "away", "position": "middle", "highlight": "w" },
+            { "word": "ikaw", "position": "end", "highlight": "w" }
+          ]
+        },
+        {
+          "sound": "y",
+          "examples": [
+            { "word": "yakap", "position": "start", "highlight": "y" },
+            { "word": "bayad", "position": "middle", "highlight": "y" },
+            { "word": "bahay", "position": "end", "highlight": "y" }
+          ]
+        }
+      ]
+    }
+  ]
+}

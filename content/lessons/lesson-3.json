@@ -1,0 +1,62 @@
+{
+  "id": "lesson-3",
+  "stage": 1,
+  "level": "A0",
+  "title": "Thanks, Sorry, and Goodbye",
+  "goal": "Use essential polite expressions in everyday interactions.",
+  "vocabulary": [
+    {
+      "tagalog": "salamat",
+      "english": "thank you"
+    },
+    {
+      "tagalog": "po",
+      "english": "politeness marker"
+    },
+    {
+      "tagalog": "walang anuman",
+      "english": "you're welcome"
+    },
+    {
+      "tagalog": "pasensya na",
+      "english": "sorry / excuse me"
+    },
+    {
+      "tagalog": "paalam",
+      "english": "goodbye"
+    },
+    {
+      "tagalog": "ingat",
+      "english": "take care"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Salamat.",
+      "english": "Thank you."
+    },
+    {
+      "tagalog": "Salamat po.",
+      "english": "Thank you. (polite)"
+    },
+    {
+      "tagalog": "Walang anuman.",
+      "english": "You're welcome."
+    },
+    {
+      "tagalog": "Pasensya na.",
+      "english": "Sorry. / Excuse me."
+    },
+    {
+      "tagalog": "Paalam.",
+      "english": "Goodbye."
+    },
+    {
+      "tagalog": "Ingat.",
+      "english": "Take care."
+    }
+  ],
+  "notes": [
+    "Use po to sound polite, especially with older people, strangers, or in service situations."
+  ]
+}

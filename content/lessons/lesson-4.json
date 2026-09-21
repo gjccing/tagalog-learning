@@ -1,0 +1,56 @@
+{
+  "id": "lesson-4",
+  "stage": 1,
+  "level": "A0",
+  "title": "I Don't Understand",
+  "goal": "Tell someone you do not understand and ask them to repeat or slow down.",
+  "vocabulary": [
+    {
+      "tagalog": "intindihin",
+      "english": "to understand"
+    },
+    {
+      "tagalog": "ulit",
+      "english": "again / repeat"
+    },
+    {
+      "tagalog": "dahan-dahan",
+      "english": "slowly"
+    },
+    {
+      "tagalog": "sandali",
+      "english": "a moment"
+    },
+    {
+      "tagalog": "ano",
+      "english": "what"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Hindi ko maintindihan.",
+      "english": "I don't understand."
+    },
+    {
+      "tagalog": "Pakiulit.",
+      "english": "Please repeat."
+    },
+    {
+      "tagalog": "Dahan-dahan lang.",
+      "english": "Slowly, please."
+    },
+    {
+      "tagalog": "Ano?",
+      "english": "What?"
+    },
+    {
+      "tagalog": "Sandali lang.",
+      "english": "Just a moment."
+    },
+    {
+      "tagalog": "Pakiulit po.",
+      "english": "Please repeat. (polite)"
+    }
+  ],
+  "notes": []
+}

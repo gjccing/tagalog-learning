@@ -1,0 +1,60 @@
+{
+  "id": "lesson-9",
+  "stage": 1,
+  "level": "A0",
+  "title": "I Don't Want",
+  "goal": "Refuse or express that you do not want something.",
+  "vocabulary": [
+    {
+      "tagalog": "ayaw",
+      "english": "do not want / dislike"
+    },
+    {
+      "tagalog": "kape",
+      "english": "coffee"
+    },
+    {
+      "tagalog": "tubig",
+      "english": "water"
+    },
+    {
+      "tagalog": "pagkain",
+      "english": "food"
+    },
+    {
+      "tagalog": "maanghang",
+      "english": "spicy"
+    },
+    {
+      "tagalog": "hindi",
+      "english": "no / not"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Ayaw ko.",
+      "english": "I don't want it."
+    },
+    {
+      "tagalog": "Ayaw ko ng kape.",
+      "english": "I don't want coffee."
+    },
+    {
+      "tagalog": "Ayaw ko ng pagkain.",
+      "english": "I don't want food."
+    },
+    {
+      "tagalog": "Ayaw ko ng maanghang.",
+      "english": "I don't want spicy food."
+    },
+    {
+      "tagalog": "Hindi, salamat.",
+      "english": "No, thank you."
+    },
+    {
+      "tagalog": "Ayaw mo ba?",
+      "english": "Don't you want it?"
+    }
+  ],
+  "notes": []
+}

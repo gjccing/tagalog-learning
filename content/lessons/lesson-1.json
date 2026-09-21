@@ -1,0 +1,60 @@
+{
+  "id": "lesson-1",
+  "stage": 1,
+  "level": "A0",
+  "title": "Hello and Introductions",
+  "goal": "Greet someone and give a very simple introduction.",
+  "vocabulary": [
+    {
+      "tagalog": "Kumusta?",
+      "english": "How are you? / Hello"
+    },
+    {
+      "tagalog": "ako",
+      "english": "I / me"
+    },
+    {
+      "tagalog": "ikaw",
+      "english": "you"
+    },
+    {
+      "tagalog": "pangalan",
+      "english": "name"
+    },
+    {
+      "tagalog": "taga-",
+      "english": "from / native of"
+    },
+    {
+      "tagalog": "mabuti",
+      "english": "good / fine"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Kumusta?",
+      "english": "How are you? / Hello"
+    },
+    {
+      "tagalog": "Ako si Anna.",
+      "english": "I am Anna."
+    },
+    {
+      "tagalog": "Ang pangalan ko ay Anna.",
+      "english": "My name is Anna."
+    },
+    {
+      "tagalog": "Taga-Taiwan ako.",
+      "english": "I am from Taiwan."
+    },
+    {
+      "tagalog": "Mabuti ako.",
+      "english": "I am fine."
+    },
+    {
+      "tagalog": "Ikaw?",
+      "english": "How about you?"
+    }
+  ],
+  "notes": []
+}

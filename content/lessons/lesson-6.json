@@ -1,0 +1,64 @@
+{
+  "id": "lesson-6",
+  "stage": 1,
+  "level": "A0",
+  "title": "Eating",
+  "goal": "Talk about eating and basic food needs.",
+  "vocabulary": [
+    {
+      "tagalog": "kumain",
+      "english": "to eat / ate"
+    },
+    {
+      "tagalog": "pagkain",
+      "english": "food"
+    },
+    {
+      "tagalog": "kanin",
+      "english": "cooked rice"
+    },
+    {
+      "tagalog": "tinapay",
+      "english": "bread"
+    },
+    {
+      "tagalog": "itlog",
+      "english": "egg"
+    },
+    {
+      "tagalog": "manok",
+      "english": "chicken"
+    },
+    {
+      "tagalog": "isda",
+      "english": "fish"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Kumain ako ng kanin.",
+      "english": "I ate rice."
+    },
+    {
+      "tagalog": "Kumain ako ng tinapay.",
+      "english": "I ate bread."
+    },
+    {
+      "tagalog": "Kumain ako ng itlog.",
+      "english": "I ate an egg."
+    },
+    {
+      "tagalog": "Kumain ako ng manok.",
+      "english": "I ate chicken."
+    },
+    {
+      "tagalog": "Kumain ako ng isda.",
+      "english": "I ate fish."
+    },
+    {
+      "tagalog": "May pagkain ba?",
+      "english": "Is there food?"
+    }
+  ],
+  "notes": []
+}

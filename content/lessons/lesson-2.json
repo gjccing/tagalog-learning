@@ -1,0 +1,52 @@
+{
+  "id": "lesson-2",
+  "stage": 1,
+  "level": "A0",
+  "title": "Yes, No, and Okay",
+  "goal": "Respond to simple questions and situations.",
+  "vocabulary": [
+    {
+      "tagalog": "oo",
+      "english": "yes"
+    },
+    {
+      "tagalog": "hindi",
+      "english": "no / not"
+    },
+    {
+      "tagalog": "sige",
+      "english": "okay / sure / go ahead"
+    },
+    {
+      "tagalog": "okay lang",
+      "english": "it's okay / I'm okay"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Oo.",
+      "english": "Yes."
+    },
+    {
+      "tagalog": "Hindi.",
+      "english": "No."
+    },
+    {
+      "tagalog": "Sige.",
+      "english": "Okay. / Sure."
+    },
+    {
+      "tagalog": "Okay lang.",
+      "english": "It's okay."
+    },
+    {
+      "tagalog": "Oo, sige.",
+      "english": "Yes, okay."
+    },
+    {
+      "tagalog": "Hindi, salamat.",
+      "english": "No, thank you."
+    }
+  ],
+  "notes": []
+}

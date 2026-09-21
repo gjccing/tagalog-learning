@@ -1,0 +1,60 @@
+{
+  "id": "lesson-8",
+  "stage": 1,
+  "level": "A0",
+  "title": "I Want",
+  "goal": "Express what you want and ask what another person wants.",
+  "vocabulary": [
+    {
+      "tagalog": "gusto",
+      "english": "want / like"
+    },
+    {
+      "tagalog": "kape",
+      "english": "coffee"
+    },
+    {
+      "tagalog": "tubig",
+      "english": "water"
+    },
+    {
+      "tagalog": "pagkain",
+      "english": "food"
+    },
+    {
+      "tagalog": "kanin",
+      "english": "cooked rice"
+    },
+    {
+      "tagalog": "manok",
+      "english": "chicken"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Gusto ko ng kape.",
+      "english": "I want coffee."
+    },
+    {
+      "tagalog": "Gusto ko ng tubig.",
+      "english": "I want water."
+    },
+    {
+      "tagalog": "Gusto ko ng pagkain.",
+      "english": "I want food."
+    },
+    {
+      "tagalog": "Gusto ko ng kanin.",
+      "english": "I want rice."
+    },
+    {
+      "tagalog": "Gusto mo ba ng kape?",
+      "english": "Do you want coffee?"
+    },
+    {
+      "tagalog": "Gusto mo ba ng tubig?",
+      "english": "Do you want water?"
+    }
+  ],
+  "notes": []
+}

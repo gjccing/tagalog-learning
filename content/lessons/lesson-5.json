@@ -1,0 +1,62 @@
+{
+  "id": "lesson-5",
+  "stage": 1,
+  "level": "A0",
+  "title": "Me, You, and Them",
+  "goal": "Refer to yourself and other people in simple everyday sentences.",
+  "vocabulary": [
+    {
+      "tagalog": "ako",
+      "english": "I / me"
+    },
+    {
+      "tagalog": "ikaw",
+      "english": "you"
+    },
+    {
+      "tagalog": "siya",
+      "english": "he / she"
+    },
+    {
+      "tagalog": "sila",
+      "english": "they"
+    },
+    {
+      "tagalog": "ko",
+      "english": "my / by me"
+    },
+    {
+      "tagalog": "mo",
+      "english": "your / by you"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Ako si Ben.",
+      "english": "I am Ben."
+    },
+    {
+      "tagalog": "Ikaw si Mia.",
+      "english": "You are Mia."
+    },
+    {
+      "tagalog": "Siya si Carlo.",
+      "english": "He is Carlo. / She is Carlo."
+    },
+    {
+      "tagalog": "Sila ang mga kaibigan ko.",
+      "english": "They are my friends."
+    },
+    {
+      "tagalog": "Kaibigan ko siya.",
+      "english": "He is my friend. / She is my friend."
+    },
+    {
+      "tagalog": "Ano ang pangalan mo?",
+      "english": "What is your name?"
+    }
+  ],
+  "notes": [
+    "Tagalog siya can mean either he or she."
+  ]
+}

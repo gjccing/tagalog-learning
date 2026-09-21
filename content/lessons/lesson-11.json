@@ -1,0 +1,60 @@
+{
+  "id": "lesson-11",
+  "stage": 1,
+  "level": "A0",
+  "title": "Please Help Me",
+  "goal": "Ask another person for basic help.",
+  "vocabulary": [
+    {
+      "tagalog": "tulong",
+      "english": "help"
+    },
+    {
+      "tagalog": "tulungan",
+      "english": "to help someone"
+    },
+    {
+      "tagalog": "paki-",
+      "english": "please / polite request marker"
+    },
+    {
+      "tagalog": "kailangan",
+      "english": "need"
+    },
+    {
+      "tagalog": "hanapin",
+      "english": "to find / look for"
+    },
+    {
+      "tagalog": "dalhin",
+      "english": "to carry / bring"
+    }
+  ],
+  "patterns": [
+    {
+      "tagalog": "Tulong po.",
+      "english": "Help, please."
+    },
+    {
+      "tagalog": "Pakitulungan mo ako.",
+      "english": "Please help me."
+    },
+    {
+      "tagalog": "Puwede mo ba akong tulungan?",
+      "english": "Can you help me?"
+    },
+    {
+      "tagalog": "Kailangan ko ng tulong.",
+      "english": "I need help."
+    },
+    {
+      "tagalog": "Puwede mo ba akong tulungang hanapin ito?",
+      "english": "Can you help me find this?"
+    },
+    {
+      "tagalog": "Puwede mo ba akong tulungang dalhin ito?",
+      "english": "Can you help me carry this?"
+    }
+  ],
+  "notes": []
+}
