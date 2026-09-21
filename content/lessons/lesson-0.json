@@ -47,8 +47,7 @@
           "examples": [
             { "word": "uwi", "position": "start", "highlight": "u" },
             { "word": "tubig", "position": "middle", "highlight": "u" }
-          ],
-          "note": "Final u is uncommon in native Tagalog words."
+          ]
         }
       ],
       "note": "Tagalog vowels are generally consistent. Focus on copying the audio."
@@ -63,8 +62,7 @@
           "examples": [
             { "word": "bahay", "position": "start", "highlight": "b" },
             { "word": "babae", "position": "middle", "highlight": "b" }
-          ],
-          "note": "Final b is uncommon in native Tagalog words."
+          ]
         },
         {
           "sound": "d",
@@ -87,8 +85,7 @@
           "examples": [
             { "word": "hindi", "position": "start", "highlight": "h" },
             { "word": "bahay", "position": "middle", "highlight": "h" }
-          ],
-          "note": "Final h is uncommon in native Tagalog words."
+          ]
         },
         {
           "sound": "k",
@@ -144,8 +141,7 @@
           "examples": [
             { "word": "rito", "position": "start", "highlight": "r" },
             { "word": "pera", "position": "middle", "highlight": "r" }
-          ],
-          "note": "Final r is uncommon in native Tagalog words."
+          ]
         },
         {
           "sound": "s",

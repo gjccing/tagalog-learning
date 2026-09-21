@@ -1,7 +1,7 @@
 {
   "course": {
     "id": "tagalog-a0-a2",
-    "title": "Practical Tagalog for Adult Immigrants",
+    "title": "Practical Tagalog for Adult",
     "goal": "Develop practical Tagalog skills from A0 to A2 for handling everyday life independently."
   },
   "stages": [
@@ -20,7 +20,7 @@
     },
     {
       "id": 1,
-      "title": "Immediate Survival",
+      "title": "Everyday Basics",
       "level": "A0",
       "goal": "Handle basic everyday reactions, needs, misunderstandings, requests, and simple interactions.",
       "lessons": [
