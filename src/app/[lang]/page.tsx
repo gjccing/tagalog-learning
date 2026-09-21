@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCurriculum, getStageHref } from "@/lib/content";
+import { HomeProgress } from "@/components/HomeProgress";
+import { StageCardProgress } from "@/components/StageCardProgress";
+import {
+  flattenCurriculumLessons,
+  getCurriculum,
+  getStageHref,
+} from "@/lib/content";
 import { getDictionary, isLocale, t } from "@/lib/i18n";
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
@@ -29,6 +35,14 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </p>
       </section>
 
+      <HomeProgress
+        lang={lang}
+        dict={dict}
+        lessonIds={flattenCurriculumLessons(curriculum).map(
+          (entry) => entry.ref.id,
+        )}
+      />
+
       <section className="space-y-4">
         <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted">
           {t(dict, "Stages")}
@@ -45,15 +59,10 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 <span aria-hidden="true">·</span>
                 <span>{t(dict, stage.level)}</span>
                 <span aria-hidden="true">·</span>
-                <span>
-                  {t(
-                    dict,
-                    stage.lessons.length === 1
-                      ? "{count} lesson"
-                      : "{count} lessons",
-                    { count: stage.lessons.length },
-                  )}
-                </span>
+                <StageCardProgress
+                  dict={dict}
+                  lessonIds={stage.lessons.map((lesson) => lesson.id)}
+                />
               </div>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight">
                 {t(dict, stage.title)}

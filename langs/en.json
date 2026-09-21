@@ -1,1 +1,20 @@
-{}
+{
+  "Complete lesson": "Complete lesson",
+  "Completed": "Completed",
+  "Continue learning": "Continue learning",
+  "Course completed ✓": "Course completed ✓",
+  "In progress": "In progress",
+  "Lesson completed ✓": "Lesson completed ✓",
+  "Mark as incomplete": "Mark as incomplete",
+  "Next: {title} →": "Next: {title} →",
+  "Not started": "Not started",
+  "Reset all learning progress?": "Reset all learning progress?",
+  "Reset progress": "Reset progress",
+  "Stage completed ✓ {title}": "Stage completed ✓ {title}",
+  "Start learning": "Start learning",
+  "Your progress": "Your progress",
+  "{completed} / {total} lessons completed": "{completed} / {total} lessons completed",
+  "{completed} of {total} lessons completed": "{completed} of {total} lessons completed",
+  "{percent}%": "{percent}%",
+  "✓ Completed": "✓ Completed"
+}

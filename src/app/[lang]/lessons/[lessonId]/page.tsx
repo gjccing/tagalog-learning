@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { LessonCompletion } from "@/components/LessonCompletion";
 import { LessonNav } from "@/components/LessonNav";
+import { LessonStatus } from "@/components/LessonStatus";
 import { PronunciationLessonView } from "@/components/PronunciationLesson";
 import { StandardLessonView } from "@/components/StandardLesson";
 import {
@@ -88,6 +90,7 @@ export default async function LessonPage({
           <span>
             {t(dict, "Lesson {n}", { n: lessonNumberFromId(located.ref.id) })}
           </span>
+          <LessonStatus lessonId={located.ref.id} dict={dict} />
         </div>
         <h1 className="text-4xl font-semibold tracking-tight">
           {t(dict, located.ref.title)}
@@ -104,6 +107,8 @@ export default async function LessonPage({
           <StandardLessonView lesson={lesson} dict={dict} />
         )}
       </div>
+
+      <LessonCompletion lessonId={located.ref.id} dict={dict} />
 
       <LessonNav lang={lang} dict={dict} previous={previous} next={next} />
     </div>
