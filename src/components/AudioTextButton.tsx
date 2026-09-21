@@ -68,7 +68,7 @@ export function AudioTextButton({
       aria-label={label}
       aria-pressed={playing}
       title={text}
-      className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-accent transition-colors hover:border-accent hover:bg-card focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="inline-flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-border bg-background text-accent transition-colors hover:border-accent hover:bg-card focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <SpeakerIcon playing={playing} />
     </button>
