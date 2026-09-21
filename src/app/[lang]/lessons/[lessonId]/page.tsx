@@ -10,6 +10,7 @@ import {
   getCurriculum,
   getLesson,
   getLocatedLesson,
+  lessonNumberFromId,
 } from "@/lib/content";
 import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
 import { isPronunciationLesson } from "@/lib/types";
@@ -84,7 +85,9 @@ export default async function LessonPage({
           <span aria-hidden="true">·</span>
           <span>{t(dict, located.stage.level)}</span>
           <span aria-hidden="true">·</span>
-          <span>{t(dict, "Lesson {n}", { n: located.index + 1 })}</span>
+          <span>
+            {t(dict, "Lesson {n}", { n: lessonNumberFromId(located.ref.id) })}
+          </span>
         </div>
         <h1 className="text-4xl font-semibold tracking-tight">
           {t(dict, located.ref.title)}

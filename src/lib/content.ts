@@ -84,6 +84,11 @@ const getLessonIndex = cache(async (): Promise<Map<string, Lesson>> => {
   return index;
 });
 
+export function lessonNumberFromId(id: string): number {
+  const match = id.match(/(\d+)$/);
+  return match ? Number(match[1]) : Number.NaN;
+}
+
 function lessonIdVariants(id: string): string[] {
   const variants = new Set<string>([id]);
   const match = id.match(/^(.*?)(\d+)$/);

@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { getCurriculum, getStage, getStageHref } from "@/lib/content";
+import {
+  getCurriculum,
+  getStage,
+  getStageHref,
+  lessonNumberFromId,
+} from "@/lib/content";
 import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
 
 export async function generateStaticParams() {
@@ -75,14 +80,14 @@ export default async function StagePage({
       </div>
 
       <ol className="space-y-3">
-        {stage.lessons.map((lesson, index) => (
+        {stage.lessons.map((lesson) => (
           <li key={lesson.id}>
             <Link
               href={withLang(lang, `/lessons/${lesson.id}`)}
               className="block rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-accent"
             >
               <p className="text-sm text-muted">
-                {t(dict, "Lesson {n}", { n: index + 1 })}
+                {t(dict, "Lesson {n}", { n: lessonNumberFromId(lesson.id) })}
               </p>
               <h2 className="mt-1 text-xl font-semibold tracking-tight">
                 {t(dict, lesson.title)}

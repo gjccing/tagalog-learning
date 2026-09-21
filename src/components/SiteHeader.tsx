@@ -21,12 +21,6 @@ export async function SiteHeader({
           </p>
         </Link>
         <div className="flex shrink-0 items-center gap-4">
-          <Link
-            href={withLang(lang, "/")}
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
-            {t(dict, "All stages")}
-          </Link>
           <LanguageSwitcher current={lang} label={t(dict, "Language")} />
         </div>
       </div>
