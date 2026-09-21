@@ -1,3 +1,4 @@
+import { AudioText } from "@/components/AudioText";
 import { highlightWord } from "@/lib/highlight";
 import { t, type Dictionary } from "@/lib/i18n";
 import type { PronunciationLesson } from "@/lib/types";
@@ -40,7 +41,7 @@ export function PronunciationLessonView({
                   {item.examples.map((example) => (
                     <li
                       key={`${item.sound}-${example.word}-${example.position}`}
-                      className="flex items-baseline justify-between gap-3"
+                      className="flex items-center justify-between gap-3"
                     >
                       <span className="text-lg tracking-wide">
                         {highlightWord(
@@ -49,9 +50,10 @@ export function PronunciationLessonView({
                           example.position,
                         )}
                       </span>
-                      <span className="text-xs tracking-wide text-muted">
-                        {t(dict, example.position)}
-                      </span>
+                      <AudioText
+                        text={example.word}
+                        label={t(dict, "Play {text}", { text: example.word })}
+                      />
                     </li>
                   ))}
                 </ul>
