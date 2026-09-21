@@ -8,5 +8,5 @@ export function audioSrcFor(text: string) {
   const hash = createHash("md5")
     .update(normalizeTagalogText(text), "utf8")
     .digest("hex");
-  return `/audio/${hash}.mp3`;
+  return `/audios/${hash}.mp3`;
 }

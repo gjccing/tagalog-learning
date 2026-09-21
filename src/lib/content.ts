@@ -89,6 +89,12 @@ export function lessonNumberFromId(id: string): number {
   return match ? Number(match[1]) : Number.NaN;
 }
 
+export function lessonApkgHref(lessonId: string, lang: string): string | null {
+  const n = lessonNumberFromId(lessonId);
+  if (!Number.isFinite(n) || n === 0) return null;
+  return `/decks/lesson-${n}-${lang}.apkg`;
+}
+
 function lessonIdVariants(id: string): string[] {
   const variants = new Set<string>([id]);
   const match = id.match(/^(.*?)(\d+)$/);

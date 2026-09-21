@@ -415,7 +415,7 @@ async function main() {
 
   for (const [index, item] of missing.entries()) {
     console.log(`Generating: "${item.text}"`);
-    console.log(`→ public/audio/${item.hash}.mp3`);
+    console.log(`→ public/audios/${item.hash}.mp3`);
 
     try {
       const buffer = await generateMp3(item.text);

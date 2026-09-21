@@ -456,7 +456,7 @@ async function loadMedia(notes) {
     try {
       media.push({ name: note.audioFile, data: await readFile(note.audioPath) });
     } catch {
-      fail(`Missing audio: ${note.tagalog} → public/audio/${note.audioFile}\nGenerate it first: npm run audio:generate`);
+      fail(`Missing audio: ${note.tagalog} → public/audios/${note.audioFile}\nGenerate it first: npm run audio:generate`);
     }
   }
 

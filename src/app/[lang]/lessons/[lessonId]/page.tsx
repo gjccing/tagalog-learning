@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AnkiDownload } from "@/components/AnkiDownload";
+import { ChatGptTutor } from "@/components/ChatGptTutor";
 import { LessonNav } from "@/components/LessonNav";
 import { PronunciationLessonView } from "@/components/PronunciationLesson";
 import { StandardLessonView } from "@/components/StandardLesson";
+import { getChatgptTutorHref } from "@/lib/chatgpt-tutor";
 import {
   flattenCurriculumLessons,
   getAdjacentLessons,
   getCurriculum,
   getLesson,
   getLocatedLesson,
+  lessonApkgHref,
   lessonNumberFromId,
 } from "@/lib/content";
 import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
@@ -63,6 +67,13 @@ export default async function LessonPage({
   }
 
   const { previous, next } = adjacent;
+  const apkgHref = lessonApkgHref(located.ref.id, lang);
+  const tutorHref = await getChatgptTutorHref({
+    lang,
+    lesson,
+    located,
+    dict,
+  });
 
   return (
     <div>
@@ -104,6 +115,16 @@ export default async function LessonPage({
           <StandardLessonView lesson={lesson} dict={dict} />
         )}
       </div>
+
+      <section className="mt-10 space-y-4">
+        <h2 className="text-2xl font-semibold tracking-tight">
+          {t(dict, "Practice")}
+        </h2>
+        <div className={apkgHref ? "grid gap-3 sm:grid-cols-2" : undefined}>
+          <ChatGptTutor href={tutorHref} lang={lang} dict={dict} />
+          {apkgHref ? <AnkiDownload href={apkgHref} dict={dict} /> : null}
+        </div>
+      </section>
 
       <LessonNav lang={lang} dict={dict} previous={previous} next={next} />
     </div>
