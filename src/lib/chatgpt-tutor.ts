@@ -2,11 +2,7 @@ import { cache } from "react";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { t, type Dictionary, type Locale } from "./i18n";
-import {
-  isPronunciationLesson,
-  type Lesson,
-  type LocatedLesson,
-} from "./types";
+import type { LocatedLesson, StandardLesson } from "./types";
 
 const PROMPTS_DIR = path.join(process.cwd(), "content", "prompts");
 
@@ -24,42 +20,11 @@ function fillTemplate(template: string, vars: Record<string, string>): string {
   return text;
 }
 
-function uniqueLines(items: string[]): string {
-  return [...new Set(items.filter(Boolean))].join("\n");
-}
-
 function formatTutorFields(
-  lesson: Lesson,
+  lesson: StandardLesson,
   located: LocatedLesson,
   dict: Dictionary,
 ): Record<string, string> {
-  if (isPronunciationLesson(lesson)) {
-    const vocabulary: string[] = [];
-    const patterns: string[] = [];
-
-    for (const section of lesson.sections) {
-      vocabulary.push(t(dict, section.title));
-      if (section.instruction) vocabulary.push(t(dict, section.instruction));
-
-      for (const item of section.items) {
-        const examples = item.examples.map((example) => example.word);
-        vocabulary.push(`- ${item.sound}: ${examples.join(", ")}`);
-        if (item.note) vocabulary.push(`  ${t(dict, item.note)}`);
-        for (const word of examples) patterns.push(`- ${word}`);
-      }
-
-      if (section.note) vocabulary.push(t(dict, section.note));
-      vocabulary.push("");
-    }
-
-    return {
-      "lesson.title": t(dict, located.ref.title),
-      "lesson.goal": t(dict, located.ref.goal),
-      vocabulary: vocabulary.join("\n").trim(),
-      patterns: uniqueLines(patterns),
-    };
-  }
-
   const notes =
     lesson.notes && lesson.notes.length > 0
       ? `\n\n${lesson.notes.map((note) => `- ${t(dict, note)}`).join("\n")}`
@@ -71,10 +36,9 @@ function formatTutorFields(
     vocabulary: lesson.vocabulary
       .map((item) => `- ${item.tagalog} — ${t(dict, item.english)}`)
       .join("\n"),
-    patterns:
-      lesson.patterns
-        .map((item) => `- ${item.tagalog} — ${t(dict, item.english)}`)
-        .join("\n") + notes,
+    patterns: lesson.patterns
+      .map((item) => `- ${item.tagalog} — ${t(dict, item.english)}`)
+      .join("\n") + notes,
   };
 }
 
@@ -85,7 +49,7 @@ export async function getChatgptTutorHref({
   dict,
 }: {
   lang: Locale;
-  lesson: Lesson;
+  lesson: StandardLesson;
   located: LocatedLesson;
   dict: Dictionary;
 }): Promise<string> {
