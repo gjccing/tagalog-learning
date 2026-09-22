@@ -35,6 +35,7 @@ export function ChatGptTutor({
       <button
         type="button"
         onClick={() => setOpen(true)}
+        data-webmcp="chatgpt-practice"
         className="w-full cursor-pointer rounded-2xl border border-border bg-card px-5 py-4 text-left shadow-sm transition-colors hover:border-accent"
       >
         <div className="flex items-baseline justify-between gap-4">

@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import { DocumentLang } from "@/components/DocumentLang";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { WebMcpTools } from "@/components/WebMcpTools";
 import { getCurriculum } from "@/lib/content";
 import { getDictionary, isLocale, locales, t } from "@/lib/i18n";
+import { getWebMcpCatalog } from "@/lib/webmcp-catalog";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -42,14 +44,16 @@ export default async function LangLayout({
     notFound();
   }
 
-  const [curriculum, dict] = await Promise.all([
+  const [curriculum, dict, catalog] = await Promise.all([
     getCurriculum(),
     getDictionary(lang),
+    getWebMcpCatalog(lang),
   ]);
 
   return (
     <>
       <DocumentLang lang={lang} />
+      <WebMcpTools catalog={catalog} />
       <SiteHeader lang={lang} dict={dict} />
       <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-10 sm:px-6">
         {children}
