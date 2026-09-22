@@ -64,15 +64,10 @@ export default async function StagePage({
       <div className="space-y-3">
         <Link
           href={withLang(lang, "/")}
-          className="text-sm text-muted transition-colors hover:text-foreground"
+          className="inline-block text-sm text-muted transition-colors hover:text-foreground"
         >
           ← {t(dict, "All stages")}
         </Link>
-        <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
-          <span>{t(dict, "Stage {id}", { id: stage.id })}</span>
-          <span aria-hidden="true">·</span>
-          <span>{t(dict, stage.level)}</span>
-        </div>
         <h1 className="text-4xl font-semibold tracking-tight">
           {t(dict, stage.title)}
         </h1>

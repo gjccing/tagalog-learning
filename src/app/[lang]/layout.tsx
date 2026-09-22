@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DocumentLang } from "@/components/DocumentLang";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getCurriculum } from "@/lib/content";
 import { getDictionary, isLocale, locales, t } from "@/lib/i18n";
@@ -41,7 +42,10 @@ export default async function LangLayout({
     notFound();
   }
 
-  const dict = getDictionary(lang);
+  const [curriculum, dict] = await Promise.all([
+    getCurriculum(),
+    getDictionary(lang),
+  ]);
 
   return (
     <>
@@ -50,6 +54,7 @@ export default async function LangLayout({
       <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-10 sm:px-6">
         {children}
       </main>
+      <SiteFooter dict={dict} title={t(dict, curriculum.course.title)} />
     </>
   );
 }

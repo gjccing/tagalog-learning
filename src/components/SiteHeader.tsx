@@ -20,9 +20,7 @@ export async function SiteHeader({
             {t(dict, curriculum.course.title)}
           </p>
         </Link>
-        <div className="flex shrink-0 items-center gap-4">
-          <LanguageSwitcher current={lang} label={t(dict, "Language")} />
-        </div>
+        <LanguageSwitcher current={lang} label={t(dict, "Language")} />
       </div>
     </header>
   );

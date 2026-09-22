@@ -70,13 +70,13 @@ export default async function LessonPage({
   const apkgHref = lessonApkgHref(located.ref.id, lang);
   const tutorHref =
     !isPronunciationLesson(lesson) &&
-    lessonNumberFromId(located.ref.id) !== 0
+      lessonNumberFromId(located.ref.id) !== 0
       ? await getChatgptTutorHref({
-          lang,
-          lesson,
-          located,
-          dict,
-        })
+        lang,
+        lesson,
+        located,
+        dict,
+      })
       : null;
 
   return (
@@ -88,7 +88,7 @@ export default async function LessonPage({
               ? withLang(lang, "/")
               : withLang(lang, `/stages/${located.stage.id}`)
           }
-          className="text-sm text-muted transition-colors hover:text-foreground"
+          className="inline-block text-sm text-muted transition-colors hover:text-foreground"
         >
           ←{" "}
           {String(located.stage.id) === "0"
@@ -96,10 +96,6 @@ export default async function LessonPage({
             : t(dict, located.stage.title)}
         </Link>
         <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
-          <span>{t(dict, "Stage {id}", { id: located.stage.id })}</span>
-          <span aria-hidden="true">·</span>
-          <span>{t(dict, located.stage.level)}</span>
-          <span aria-hidden="true">·</span>
           <span>
             {t(dict, "Lesson {n}", { n: lessonNumberFromId(located.ref.id) })}
           </span>
