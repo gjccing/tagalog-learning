@@ -19,7 +19,7 @@ export async function generateMetadata({
 }: LayoutProps<"/[lang]">): Promise<Metadata> {
   const { lang } = await params;
   if (!isLocale(lang)) {
-    return { title: "Practical Tagalog for Adult" };
+    return { title: "Practical Tagalog" };
   }
 
   const curriculum = await getCurriculum();

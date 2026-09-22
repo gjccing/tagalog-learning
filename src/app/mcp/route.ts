@@ -20,7 +20,7 @@ const handler = createMcpHandler(
       {
         title: "Get curriculum",
         description:
-          "Return the full Practical Tagalog for Adult curriculum: course metadata and stages with lesson summaries.",
+          "Return the full Practical Tagalog curriculum: course metadata and stages with lesson summaries.",
         inputSchema: z.object({}),
       },
       async () => {

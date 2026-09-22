@@ -33,7 +33,7 @@ function createTools(catalog: WebMcpCatalog): WebMcpToolDefinition[] {
       name: "list_lessons",
       title: "List lessons",
       description:
-        "List stages and lessons in Practical Tagalog for Adult. Use this to discover lesson ids before opening or reading a lesson. Optionally filter by stage_id (0 or 1).",
+        "List stages and lessons in Practical Tagalog. Use this to discover lesson ids before opening or reading a lesson. Optionally filter by stage_id (0 or 1).",
       inputSchema: {
         type: "object",
         properties: {
