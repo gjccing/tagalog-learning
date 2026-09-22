@@ -56,5 +56,45 @@
       "english": "Do you want water?"
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "express-want",
+        "description": "Say what you want using Gusto ko ng ..."
+      },
+      {
+        "id": "ask-want",
+        "description": "Ask another person whether they want something."
+      },
+      {
+        "id": "choose-food-drink",
+        "description": "Use food and drink words to make a simple choice."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "choose-drink",
+        "title": "Choosing a drink",
+        "setup": "You and another person are deciding what to drink.",
+        "learnerGoal": "Say what you want and ask what the other person wants.",
+        "targets": [
+          "Gusto ko ng kape.",
+          "Gusto ko ng tubig.",
+          "Gusto mo ba ng kape?",
+          "Gusto mo ba ng tubig?"
+        ]
+      },
+      {
+        "id": "choose-food",
+        "title": "Choosing food",
+        "setup": "You are deciding what to eat.",
+        "learnerGoal": "Say that you want food or rice.",
+        "targets": [
+          "Gusto ko ng pagkain.",
+          "Gusto ko ng kanin."
+        ]
+      }
+    ]
+  }
 }

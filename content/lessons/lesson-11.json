@@ -56,5 +56,57 @@
       "english": "Can you help me carry this?"
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "ask-help",
+        "description": "Ask another person for help."
+      },
+      {
+        "id": "state-need-help",
+        "description": "Say that you need help."
+      },
+      {
+        "id": "ask-find",
+        "description": "Ask someone to help you find something."
+      },
+      {
+        "id": "ask-carry",
+        "description": "Ask someone to help you carry something."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "need-help",
+        "title": "Asking for basic help",
+        "setup": "You are having trouble with something and need another person's help.",
+        "learnerGoal": "Get the person's attention and ask for help.",
+        "targets": [
+          "Tulong po.",
+          "Pakitulungan mo ako.",
+          "Puwede mo ba akong tulungan?",
+          "Kailangan ko ng tulong."
+        ]
+      },
+      {
+        "id": "find-item",
+        "title": "Finding something",
+        "setup": "You cannot find an item in a store or unfamiliar place.",
+        "learnerGoal": "Ask someone to help you find it.",
+        "targets": [
+          "Puwede mo ba akong tulungang hanapin ito?"
+        ]
+      },
+      {
+        "id": "carry-item",
+        "title": "Carrying something",
+        "setup": "You have something difficult to carry by yourself.",
+        "learnerGoal": "Ask someone to help you carry it.",
+        "targets": [
+          "Puwede mo ba akong tulungang dalhin ito?"
+        ]
+      }
+    ]
+  }
 }

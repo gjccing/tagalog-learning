@@ -60,5 +60,45 @@
       "english": "The water is cold."
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "say-what-drank",
+        "description": "Say what you drank using a simple Uminom ako ng ... sentence."
+      },
+      {
+        "id": "use-drink-words",
+        "description": "Use basic drink vocabulary in short sentences."
+      },
+      {
+        "id": "describe-temperature",
+        "description": "Describe a drink as hot or cold."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "drink-chat",
+        "title": "Talking about drinks",
+        "setup": "Someone asks what you drank.",
+        "learnerGoal": "Answer using water, coffee, tea, or milk.",
+        "targets": [
+          "Uminom ako ng tubig.",
+          "Uminom ako ng kape.",
+          "Uminom ako ng tsaa.",
+          "Uminom ako ng gatas."
+        ]
+      },
+      {
+        "id": "temperature",
+        "title": "Describing a drink",
+        "setup": "You are talking about the temperature of a drink.",
+        "learnerGoal": "Say whether the coffee or water is hot or cold.",
+        "targets": [
+          "Mainit ang kape.",
+          "Malamig ang tubig."
+        ]
+      }
+    ]
+  }
 }

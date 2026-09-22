@@ -39,6 +39,20 @@ function formatTutorFields(
     patterns: lesson.patterns
       .map((item) => `- ${item.tagalog} — ${t(dict, item.english)}`)
       .join("\n") + notes,
+    objectives: (lesson.practice?.objectives ?? [])
+      .map((item) => `- ${t(dict, item.description)}`)
+      .join("\n"),
+    scenarios: (lesson.practice?.scenarios ?? [])
+      .map((item) => {
+        const targets = item.targets.join("; ");
+        return [
+          `- ${t(dict, item.title)}`,
+          `  Setup: ${t(dict, item.setup)}`,
+          `  Goal: ${t(dict, item.learnerGoal)}`,
+          `  Targets: ${targets}`,
+        ].join("\n");
+      })
+      .join("\n"),
   };
 }
 

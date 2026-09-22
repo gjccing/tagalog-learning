@@ -56,5 +56,51 @@
       "english": "How about you?"
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "greet",
+        "description": "Greet someone naturally using Kumusta?"
+      },
+      {
+        "id": "introduce-name",
+        "description": "Introduce yourself by name."
+      },
+      {
+        "id": "say-origin",
+        "description": "Say that you are from Taiwan."
+      },
+      {
+        "id": "respond-how-are-you",
+        "description": "Give a simple response to Kumusta? and ask the other person back."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "first-meeting",
+        "title": "Meeting someone for the first time",
+        "setup": "You meet a new person in a casual setting.",
+        "learnerGoal": "Greet them, say your name, say where you are from, and respond when they ask how you are.",
+        "targets": [
+          "Kumusta?",
+          "Ako si Anna.",
+          "Taga-Taiwan ako.",
+          "Mabuti ako.",
+          "Ikaw?"
+        ]
+      },
+      {
+        "id": "simple-introduction",
+        "title": "Simple self-introduction",
+        "setup": "Someone asks who you are.",
+        "learnerGoal": "Give a short self-introduction without being shown the full answer first.",
+        "targets": [
+          "Ako si Anna.",
+          "Ang pangalan ko ay Anna.",
+          "Taga-Taiwan ako."
+        ]
+      }
+    ]
+  }
 }

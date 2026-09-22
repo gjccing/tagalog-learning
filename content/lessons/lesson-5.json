@@ -58,5 +58,48 @@
   ],
   "notes": [
     "Tagalog siya can mean either he or she."
-  ]
+  ],
+  "practice": {
+    "objectives": [
+      {
+        "id": "refer-self-other",
+        "description": "Refer to yourself, another person, and a group of people."
+      },
+      {
+        "id": "ask-name",
+        "description": "Ask another person for their name."
+      },
+      {
+        "id": "identify-friend",
+        "description": "Say that someone is your friend."
+      },
+      {
+        "id": "introduce-person",
+        "description": "Introduce another person with a simple sentence."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "introduce-friend",
+        "title": "Introducing a friend",
+        "setup": "You are with a friend and meet someone new.",
+        "learnerGoal": "Introduce yourself and your friend, then ask the new person's name.",
+        "targets": [
+          "Ako si Ben.",
+          "Siya si Carlo.",
+          "Kaibigan ko siya.",
+          "Ano ang pangalan mo?"
+        ]
+      },
+      {
+        "id": "talk-about-group",
+        "title": "Talking about a group",
+        "setup": "Someone asks who the people with you are.",
+        "learnerGoal": "Say that they are your friends.",
+        "targets": [
+          "Sila ang mga kaibigan ko."
+        ]
+      }
+    ]
+  }
 }

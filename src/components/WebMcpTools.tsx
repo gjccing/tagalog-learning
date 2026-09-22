@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { locales, replaceLocale, type Locale } from "@/lib/locales";
 import type { WebMcpCatalog, WebMcpLesson } from "@/lib/webmcp-catalog";
 import { registerWebMcpTools, type WebMcpToolDefinition } from "@/lib/webmcp";
 
@@ -104,25 +103,6 @@ function createTools(catalog: WebMcpCatalog): WebMcpToolDefinition[] {
           optionalString(stage_id),
           optionalString(lesson),
         ),
-    },
-    {
-      name: "switch_language",
-      title: "Switch language",
-      description:
-        "Switch the site interface between English and Traditional Chinese. This reloads the current page in the chosen language.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          language: {
-            type: "string",
-            enum: [...locales],
-            description: "en for English, zh-TW for Traditional Chinese.",
-          },
-        },
-        required: ["language"],
-        additionalProperties: false,
-      },
-      execute: ({ language }) => switchLanguage(optionalString(language)),
     },
     {
       name: "play_audio",
@@ -325,15 +305,6 @@ function openPage(
   }
 
   return { ok: false, error: "target must be home, stage, or lesson." };
-}
-
-function switchLanguage(language?: string) {
-  if (!language || !locales.includes(language as Locale)) {
-    return { ok: false, error: "language must be en or zh-TW." };
-  }
-
-  document.cookie = `lang=${language}; path=/; max-age=31536000`;
-  return navigate(replaceLocale(window.location.pathname, language as Locale));
 }
 
 function playAudio(text?: string) {

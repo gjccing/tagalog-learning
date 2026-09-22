@@ -60,5 +60,45 @@
       "english": "Is there food?"
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "say-what-ate",
+        "description": "Say what you ate using a simple Kumain ako ng ... sentence."
+      },
+      {
+        "id": "use-food-words",
+        "description": "Use basic food vocabulary in short sentences."
+      },
+      {
+        "id": "ask-food-available",
+        "description": "Ask whether there is food available."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "meal-chat",
+        "title": "Talking about a meal",
+        "setup": "Someone asks what you ate.",
+        "learnerGoal": "Answer with one or more foods from this lesson.",
+        "targets": [
+          "Kumain ako ng kanin.",
+          "Kumain ako ng tinapay.",
+          "Kumain ako ng itlog.",
+          "Kumain ako ng manok.",
+          "Kumain ako ng isda."
+        ]
+      },
+      {
+        "id": "check-food",
+        "title": "Checking for food",
+        "setup": "You arrive somewhere and want to know whether food is available.",
+        "learnerGoal": "Ask if there is food.",
+        "targets": [
+          "May pagkain ba?"
+        ]
+      }
+    ]
+  }
 }

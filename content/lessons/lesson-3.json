@@ -58,5 +58,49 @@
   ],
   "notes": [
     "Use po to sound polite, especially with older people, strangers, or in service situations."
-  ]
+  ],
+  "practice": {
+    "objectives": [
+      {
+        "id": "thank",
+        "description": "Thank someone in a normal or polite way."
+      },
+      {
+        "id": "respond-to-thanks",
+        "description": "Respond when someone thanks you."
+      },
+      {
+        "id": "apologize",
+        "description": "Say sorry or excuse me in a simple situation."
+      },
+      {
+        "id": "say-goodbye",
+        "description": "End a short interaction with goodbye or take care."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "service-interaction",
+        "title": "Polite service interaction",
+        "setup": "A staff member helps you with something.",
+        "learnerGoal": "Thank them politely and respond appropriately if they reply.",
+        "targets": [
+          "Salamat.",
+          "Salamat po.",
+          "Walang anuman."
+        ]
+      },
+      {
+        "id": "leaving",
+        "title": "Ending a conversation",
+        "setup": "You are leaving after a short conversation.",
+        "learnerGoal": "Say goodbye naturally and use a simple closing expression.",
+        "targets": [
+          "Paalam.",
+          "Ingat.",
+          "Pasensya na."
+        ]
+      }
+    ]
+  }
 }

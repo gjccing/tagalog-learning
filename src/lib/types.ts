@@ -53,6 +53,24 @@ export type PatternItem = {
   english: string;
 };
 
+export type PracticeObjective = {
+  id: string;
+  description: string;
+};
+
+export type PracticeScenario = {
+  id: string;
+  title: string;
+  setup: string;
+  learnerGoal: string;
+  targets: string[];
+};
+
+export type Practice = {
+  objectives: PracticeObjective[];
+  scenarios: PracticeScenario[];
+};
+
 export type PronunciationLesson = {
   id: string;
   stage: number | string;
@@ -71,6 +89,7 @@ export type StandardLesson = {
   vocabulary: VocabItem[];
   patterns: PatternItem[];
   notes?: string[];
+  practice?: Practice;
 };
 
 export type Lesson = PronunciationLesson | StandardLesson;

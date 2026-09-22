@@ -56,5 +56,57 @@
       "english": "Don't you want it?"
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "express-dont-want",
+        "description": "Say that you do not want something."
+      },
+      {
+        "id": "decline-specific-item",
+        "description": "Refuse a specific food or drink."
+      },
+      {
+        "id": "decline-politely",
+        "description": "Use a polite short refusal."
+      },
+      {
+        "id": "ask-dont-want",
+        "description": "Ask whether another person does not want something."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "refuse-offer",
+        "title": "Refusing an offer",
+        "setup": "Someone offers you coffee or food that you do not want.",
+        "learnerGoal": "Refuse clearly and, when appropriate, politely.",
+        "targets": [
+          "Ayaw ko.",
+          "Ayaw ko ng kape.",
+          "Ayaw ko ng pagkain.",
+          "Hindi, salamat."
+        ]
+      },
+      {
+        "id": "avoid-spicy",
+        "title": "Avoiding spicy food",
+        "setup": "Someone offers you spicy food.",
+        "learnerGoal": "Say that you do not want spicy food.",
+        "targets": [
+          "Ayaw ko ng maanghang."
+        ]
+      },
+      {
+        "id": "check-other-person",
+        "title": "Checking another person's preference",
+        "setup": "Someone does not seem interested in an item.",
+        "learnerGoal": "Ask whether they do not want it.",
+        "targets": [
+          "Ayaw mo ba?"
+        ]
+      }
+    ]
+  }
 }

@@ -52,5 +52,49 @@
       "english": "Please repeat. (polite)"
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "say-not-understand",
+        "description": "Say that you do not understand."
+      },
+      {
+        "id": "ask-repeat",
+        "description": "Ask someone to repeat what they said."
+      },
+      {
+        "id": "ask-slow-down",
+        "description": "Ask someone to speak more slowly."
+      },
+      {
+        "id": "ask-for-moment",
+        "description": "Ask for a moment when you need time."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "fast-speaker",
+        "title": "Someone speaks too quickly",
+        "setup": "A person says something in Tagalog too quickly for you to follow.",
+        "learnerGoal": "Tell them you do not understand and ask them to repeat or slow down.",
+        "targets": [
+          "Hindi ko maintindihan.",
+          "Pakiulit.",
+          "Dahan-dahan lang.",
+          "Pakiulit po."
+        ]
+      },
+      {
+        "id": "need-a-moment",
+        "title": "You need a moment",
+        "setup": "You are trying to understand or respond but need a few seconds.",
+        "learnerGoal": "Ask for a moment and then continue the interaction.",
+        "targets": [
+          "Sandali lang.",
+          "Ano?"
+        ]
+      }
+    ]
+  }
 }

@@ -56,5 +56,49 @@
       "english": "Can I use this?"
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "ask-permission",
+        "description": "Ask for permission with Puwede ba?"
+      },
+      {
+        "id": "understand-permission",
+        "description": "Understand simple allowed and not-allowed responses."
+      },
+      {
+        "id": "ask-sit",
+        "description": "Ask whether you may sit somewhere."
+      },
+      {
+        "id": "ask-enter-use",
+        "description": "Ask whether you may enter or use something."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "ask-seat",
+        "title": "Asking to sit",
+        "setup": "You see an empty seat and want to know whether you may sit there.",
+        "learnerGoal": "Ask permission and understand a simple yes or no response.",
+        "targets": [
+          "Puwede ba?",
+          "Puwede.",
+          "Hindi puwede.",
+          "Puwede ba akong umupo dito?"
+        ]
+      },
+      {
+        "id": "enter-or-use",
+        "title": "Entering or using something",
+        "setup": "You want to enter a room or use an object.",
+        "learnerGoal": "Ask permission with the appropriate sentence.",
+        "targets": [
+          "Puwede ba akong pumasok?",
+          "Puwede ko bang gamitin ito?"
+        ]
+      }
+    ]
+  }
 }

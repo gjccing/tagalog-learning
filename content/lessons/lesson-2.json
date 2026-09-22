@@ -48,5 +48,49 @@
       "english": "No, thank you."
     }
   ],
-  "notes": []
+  "notes": [],
+  "practice": {
+    "objectives": [
+      {
+        "id": "answer-yes-no",
+        "description": "Answer a simple question with yes or no."
+      },
+      {
+        "id": "accept",
+        "description": "Accept a suggestion or request using sige."
+      },
+      {
+        "id": "reassure",
+        "description": "Use okay lang in a simple everyday situation."
+      },
+      {
+        "id": "decline-politely",
+        "description": "Decline politely using Hindi, salamat."
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "accept-suggestion",
+        "title": "Accepting a suggestion",
+        "setup": "Someone suggests a simple activity or asks if something is okay.",
+        "learnerGoal": "Respond naturally with yes, no, sige, or okay lang depending on the situation.",
+        "targets": [
+          "Oo.",
+          "Hindi.",
+          "Sige.",
+          "Okay lang.",
+          "Oo, sige."
+        ]
+      },
+      {
+        "id": "decline-offer",
+        "title": "Declining an offer",
+        "setup": "Someone offers you something you do not want.",
+        "learnerGoal": "Refuse briefly and politely.",
+        "targets": [
+          "Hindi, salamat."
+        ]
+      }
+    ]
+  }
 }
