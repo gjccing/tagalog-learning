@@ -14,10 +14,12 @@ import {
   getCurriculum,
   getLesson,
   getLocatedLesson,
+  isIntroStage,
   lessonApkgHref,
   lessonNumberFromId,
+  stageParentHref,
 } from "@/lib/content";
-import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
+import { getDictionary, isLocale, locales, t } from "@/lib/i18n";
 import {
   breadcrumbJsonLd,
   graphJsonLd,
@@ -46,7 +48,7 @@ export async function generateMetadata({
     return { title: "Lesson not found" };
   }
 
-  const dict = await getDictionary(lang);
+  const dict = getDictionary(lang);
   const title = t(dict, "{title} · Lesson {n} Tagalog", {
     title: t(dict, located.ref.title),
     n: lessonNumberFromId(located.ref.id),
@@ -84,35 +86,34 @@ export default async function LessonPage({
     notFound();
   }
 
-  const [located, lesson, adjacent, dict] = await Promise.all([
+  const [located, lesson, adjacent] = await Promise.all([
     getLocatedLesson(lessonId),
     getLesson(lessonId),
     getAdjacentLessons(lessonId),
-    getDictionary(lang),
   ]);
 
   if (!located || !lesson) {
     notFound();
   }
 
+  const dict = getDictionary(lang);
   const { previous, next } = adjacent;
   const apkgHref = lessonApkgHref(located.ref.id, lang);
-  const tutorHref =
-    !isPronunciationLesson(lesson) &&
-      lessonNumberFromId(located.ref.id) !== 0
-      ? await getChatgptTutorHref({
+  const tutorHref = isPronunciationLesson(lesson)
+    ? null
+    : await getChatgptTutorHref({
         lang,
         lesson,
         located,
         dict,
-      })
-      : null;
+      });
 
   const courseName = t(dict, "Practical Tagalog");
   const lessonTitle = t(dict, located.ref.title);
+  const intro = isIntroStage(located.stage);
   const breadcrumb = [
     { name: courseName, path: localizedPath(lang, "/") },
-    ...(String(located.stage.id) === "0"
+    ...(intro
       ? []
       : [
           {
@@ -143,17 +144,10 @@ export default async function LessonPage({
       />
       <div className="space-y-3">
         <Link
-          href={
-            String(located.stage.id) === "0"
-              ? withLang(lang, "/")
-              : withLang(lang, `/stages/${located.stage.id}`)
-          }
+          href={stageParentHref(lang, located.stage)}
           className="inline-block text-sm text-muted transition-colors hover:text-foreground"
         >
-          ←{" "}
-          {String(located.stage.id) === "0"
-            ? t(dict, "All stages")
-            : t(dict, located.stage.title)}
+          ← {intro ? t(dict, "All stages") : t(dict, located.stage.title)}
         </Link>
         <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
           <span>

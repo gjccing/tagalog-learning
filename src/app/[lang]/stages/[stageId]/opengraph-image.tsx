@@ -1,5 +1,5 @@
 import { getCurriculum, getStage } from "@/lib/content";
-import { getDictionary, isLocale, t } from "@/lib/i18n";
+import { getDictionary, parseLocale, t } from "@/lib/i18n";
 import { ogContentType, ogImage, ogSize } from "@/lib/og";
 
 export const alt = "Practical Tagalog stage";
@@ -12,11 +12,11 @@ export default async function Image({
   params: Promise<{ lang: string; stageId: string }>;
 }) {
   const { lang, stageId } = await params;
-  const locale = isLocale(lang) ? lang : "en";
-  const [curriculum, stage, dict] = await Promise.all([
+  const locale = parseLocale(lang);
+  const dict = getDictionary(locale);
+  const [curriculum, stage] = await Promise.all([
     getCurriculum(),
     getStage(stageId),
-    getDictionary(locale),
   ]);
 
   if (!stage) {

@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 
-export function normalizeTagalogText(text: string) {
+function normalizeTagalogText(text: string) {
   return text.normalize("NFC").trim();
 }
 

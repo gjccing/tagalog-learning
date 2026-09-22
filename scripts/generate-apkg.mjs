@@ -144,24 +144,6 @@ function lessonNumber(id) {
   return match ? Number(match[1]) : Number.NaN;
 }
 
-function lessonFileId(id) {
-  const match = String(id).match(/^(.*?)(\d+)$/);
-  return match ? `${match[1]}${Number(match[2])}` : id;
-}
-
-function idVariants(id) {
-  const match = String(id).match(/^(.*?)(\d+)$/);
-  if (!match) return [id];
-
-  const [, prefix, digits] = match;
-  const n = Number(digits);
-  return [...new Set([id, `${prefix}${n}`, `${prefix}${String(n).padStart(2, "0")}`])];
-}
-
-function sameLesson(a, b) {
-  return idVariants(a).some((id) => idVariants(b).includes(id));
-}
-
 function t(dict, key) {
   return dict[key] ?? key;
 }
@@ -189,13 +171,6 @@ async function loadContent() {
   return { curriculum, lessons, dictionaries };
 }
 
-function findLesson(index, lessonId) {
-  for (const variant of idVariants(lessonId)) {
-    if (index.has(variant)) return index.get(variant);
-  }
-  return null;
-}
-
 function flattenCurriculum(curriculum) {
   return curriculum.stages.flatMap((stage) =>
     stage.lessons.map((ref) => ({
@@ -219,7 +194,7 @@ function selectLessons(curriculum, options) {
 
   if (options.lessonIds) {
     selected = options.lessonIds.map((requested) => {
-      const match = selected.find((entry) => sameLesson(entry.ref.id, requested));
+      const match = selected.find((entry) => entry.ref.id === requested);
       if (!match) fail(`Lesson not found in curriculum: ${requested}`);
       return match;
     });
@@ -482,14 +457,14 @@ async function main() {
   const options = parseArgs(process.argv.slice(2));
   const { curriculum, lessons, dictionaries } = await loadContent();
   const selected = selectLessons(curriculum, options).map((entry) => {
-    const lesson = findLesson(lessons, entry.ref.id);
+    const lesson = lessons.get(entry.ref.id);
     if (!lesson) fail(`Lesson file not found: ${entry.ref.id}`);
     return { ...entry, notes: notesFromLesson(lesson) };
   });
 
   if (options.dryRun) {
     for (const entry of selected) {
-      console.log(`${lessonFileId(entry.ref.id)}  ${entry.notes.length} notes`);
+      console.log(`${entry.ref.id}  ${entry.notes.length} notes`);
       for (const note of entry.notes) {
         console.log(`  ${note.tagalog}  →  ${note.english}`);
       }
@@ -509,7 +484,7 @@ async function main() {
   for (const entry of selected) {
     const media = await loadMedia(entry.notes);
     for (const lang of options.langs) {
-      const fileName = `${lessonFileId(entry.ref.id)}-${lang}.apkg`;
+      const fileName = `${entry.ref.id}-${lang}.apkg`;
       const filePath = path.join(DECKS_DIR, fileName);
       const collection = buildCollection(entry, entry.notes, dictionaries[lang], SQL);
       await writeApkg(filePath, collection, media);

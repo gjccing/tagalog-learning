@@ -49,10 +49,8 @@ export type WebMcpCatalog = {
 };
 
 export async function getWebMcpCatalog(lang: Locale): Promise<WebMcpCatalog> {
-  const [curriculum, dict] = await Promise.all([
-    getCurriculum(),
-    getDictionary(lang),
-  ]);
+  const curriculum = await getCurriculum();
+  const dict = getDictionary(lang);
 
   const stages: WebMcpStage[] = [];
 
@@ -95,7 +93,7 @@ export async function getWebMcpCatalog(lang: Locale): Promise<WebMcpCatalog> {
       lessons.push({
         ...base,
         kind: "standard",
-        hasChatgptPractice: number !== 0,
+        hasChatgptPractice: true,
         vocabulary: lesson.vocabulary.map((item) => ({
           tagalog: item.tagalog,
           meaning: t(dict, item.english),

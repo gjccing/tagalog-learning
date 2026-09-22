@@ -1,11 +1,10 @@
 import { headers } from "next/headers";
 import Link from "next/link";
-import { getDictionary, isLocale, t, withLang } from "@/lib/i18n";
+import { getDictionary, parseLocale, t, withLang } from "@/lib/i18n";
 
 export default async function NotFound() {
-  const headerLang = (await headers()).get("x-lang") ?? "en";
-  const locale = isLocale(headerLang) ? headerLang : "en";
-  const dict = await getDictionary(locale);
+  const locale = parseLocale((await headers()).get("x-lang"));
+  const dict = getDictionary(locale);
 
   return (
     <div className="space-y-4">

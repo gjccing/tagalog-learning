@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import {
   flattenCurriculumLessons,
   getCurriculum,
-  getStageHref,
+  isIntroStage,
 } from "@/lib/content";
 import { locales } from "@/lib/locales";
 import {
@@ -18,9 +18,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const paths = new Set<string>(["/"]);
 
   for (const stage of curriculum.stages) {
-    const href = getStageHref("en", stage);
-    if (href.startsWith("/en/stages/")) {
-      paths.add(href.replace(/^\/en/, "") || "/");
+    if (!isIntroStage(stage)) {
+      paths.add(`/stages/${stage.id}`);
     }
   }
 

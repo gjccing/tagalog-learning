@@ -101,25 +101,8 @@ function audioPathFor(hash) {
   return path.join(AUDIO_DIR, `${hash}.mp3`);
 }
 
-function lessonIdVariants(id) {
-  const variants = new Set([id]);
-  const match = id.match(/^(.*?)(\d+)$/);
-  if (!match) return [...variants];
-
-  const [, prefix, digits] = match;
-  const n = Number(digits);
-  variants.add(`${prefix}${n}`);
-  variants.add(`${prefix}${String(n).padStart(2, "0")}`);
-  variants.add(`${prefix}${String(n).padStart(3, "0")}`);
-  return [...variants];
-}
-
 function extractTagalogTexts(lesson) {
-  if (lesson.id === "lesson-0") {
-    if (!Array.isArray(lesson.sections)) {
-      throw new Error(`Unknown lesson structure: ${lesson.id}`);
-    }
-
+  if (Array.isArray(lesson.sections)) {
     return lesson.sections.flatMap((section) => {
       if (!Array.isArray(section?.items)) {
         throw new Error(`Unknown lesson structure: ${lesson.id}`);
@@ -197,14 +180,8 @@ function selectLessons(allLessons, options) {
     const selected = [];
 
     for (const requestedId of options.lessonIds) {
-      const variants = new Set(lessonIdVariants(requestedId));
       const match = allLessons.find(
-        (entry) =>
-          variants.has(entry.stem) ||
-          variants.has(entry.data.id) ||
-          lessonIdVariants(String(entry.data.id ?? "")).some((id) =>
-            variants.has(id),
-          ),
+        (entry) => entry.stem === requestedId || entry.data.id === requestedId,
       );
 
       if (!match) {

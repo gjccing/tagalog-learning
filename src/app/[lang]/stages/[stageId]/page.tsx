@@ -5,6 +5,7 @@ import {
   getCurriculum,
   getStage,
   getStageHref,
+  isIntroStage,
   lessonNumberFromId,
 } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
@@ -36,7 +37,7 @@ export async function generateMetadata({
     return { title: "Stage not found" };
   }
 
-  const dict = await getDictionary(lang);
+  const dict = getDictionary(lang);
   const title = t(dict, "{title} ({level})", {
     title: t(dict, stage.title),
     level: t(dict, stage.level),
@@ -73,18 +74,16 @@ export default async function StagePage({
     notFound();
   }
 
-  const [stage, dict] = await Promise.all([
-    getStage(stageId),
-    getDictionary(lang),
-  ]);
+  const stage = await getStage(stageId);
 
   if (!stage) {
     notFound();
   }
 
-  const stageHref = getStageHref(lang, stage);
-  if (stageHref !== withLang(lang, `/stages/${stage.id}`)) {
-    redirect(stageHref);
+  const dict = getDictionary(lang);
+
+  if (isIntroStage(stage)) {
+    redirect(getStageHref(lang, stage));
   }
 
   const courseName = t(dict, "Practical Tagalog");

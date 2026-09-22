@@ -1,3 +1,4 @@
+import { getStageHref, stageParentHref } from "@/lib/content";
 import { getSiteUrl, localizedPath } from "@/lib/site";
 import type { Locale } from "@/lib/locales";
 import type { Curriculum, LocatedLesson, Stage } from "@/lib/types";
@@ -63,11 +64,7 @@ export function courseJsonLd(
       name: stage.title,
       description: stage.goal,
       educationalLevel: stage.level,
-      url: absolute(
-        String(stage.id) === "0" && stage.lessons[0]
-          ? localizedPath(lang, `/lessons/${stage.lessons[0].id}`)
-          : localizedPath(lang, `/stages/${stage.id}`),
-      ),
+      url: absolute(getStageHref(lang, stage)),
     })),
   };
 }
@@ -116,10 +113,7 @@ export function lessonJsonLd(
 ) {
   const url = absolute(localizedPath(lang, `/lessons/${located.ref.id}`));
   const home = absolute(localizedPath(lang, "/"));
-  const stageUrl =
-    String(located.stage.id) === "0"
-      ? home
-      : absolute(localizedPath(lang, `/stages/${located.stage.id}`));
+  const stageUrl = absolute(stageParentHref(lang, located.stage));
 
   return {
     "@type": "LearningResource",

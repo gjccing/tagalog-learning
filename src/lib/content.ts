@@ -20,6 +20,10 @@ export function flattenCurriculumLessons(
   );
 }
 
+export function isIntroStage(stage: { id: number | string }) {
+  return String(stage.id) === "0";
+}
+
 export async function getStage(stageId: string): Promise<Stage | null> {
   const curriculum = await getCurriculum();
   return (
@@ -28,21 +32,29 @@ export async function getStage(stageId: string): Promise<Stage | null> {
 }
 
 export function getStageHref(lang: string, stage: Stage): string {
-  if (String(stage.id) === "0" && stage.lessons[0]) {
+  if (isIntroStage(stage) && stage.lessons[0]) {
     return withLang(lang, `/lessons/${stage.lessons[0].id}`);
   }
 
   return withLang(lang, `/stages/${stage.id}`);
 }
 
+export function stageParentHref(lang: string, stage: Stage): string {
+  return isIntroStage(stage)
+    ? withLang(lang, "/")
+    : withLang(lang, `/stages/${stage.id}`);
+}
+
+const getLocatedLessons = cache(async () =>
+  flattenCurriculumLessons(await getCurriculum()),
+);
+
 export async function getLocatedLesson(
   lessonId: string,
 ): Promise<LocatedLesson | null> {
-  const curriculum = await getCurriculum();
   return (
-    flattenCurriculumLessons(curriculum).find(
-      (entry) => entry.ref.id === lessonId,
-    ) ?? null
+    (await getLocatedLessons()).find((entry) => entry.ref.id === lessonId) ??
+    null
   );
 }
 
@@ -50,8 +62,7 @@ export async function getAdjacentLessons(lessonId: string): Promise<{
   previous: LocatedLesson | null;
   next: LocatedLesson | null;
 }> {
-  const curriculum = await getCurriculum();
-  const lessons = flattenCurriculumLessons(curriculum);
+  const lessons = await getLocatedLessons();
   const current = lessons.findIndex((entry) => entry.ref.id === lessonId);
 
   if (current === -1) {
@@ -76,9 +87,7 @@ const getLessonIndex = cache(async (): Promise<Map<string, Lesson>> => {
     const lesson = JSON.parse(raw) as Lesson;
 
     index.set(stem, lesson);
-    if (lesson.id) {
-      index.set(lesson.id, lesson);
-    }
+    index.set(lesson.id, lesson);
   }
 
   return index;
@@ -91,40 +100,10 @@ export function lessonNumberFromId(id: string): number {
 
 export function lessonApkgHref(lessonId: string, lang: string): string | null {
   const n = lessonNumberFromId(lessonId);
-  if (!Number.isFinite(n) || n === 0) return null;
+  if (!(n > 0)) return null;
   return `/decks/lesson-${n}-${lang}.apkg`;
 }
 
-function lessonIdVariants(id: string): string[] {
-  const variants = new Set<string>([id]);
-  const match = id.match(/^(.*?)(\d+)$/);
-
-  if (!match) {
-    return [...variants];
-  }
-
-  const [, prefix, digits] = match;
-  const n = Number(digits);
-  variants.add(`${prefix}${n}`);
-  variants.add(`${prefix}${String(n).padStart(2, "0")}`);
-  variants.add(`${prefix}${String(n).padStart(3, "0")}`);
-
-  return [...variants];
-}
-
 export async function getLesson(lessonId: string): Promise<Lesson | null> {
-  const index = await getLessonIndex();
-
-  for (const variant of lessonIdVariants(lessonId)) {
-    const lesson = index.get(variant);
-    if (lesson) return lesson;
-  }
-
-  for (const lesson of new Set(index.values())) {
-    if (lessonIdVariants(lessonId).includes(lesson.id)) {
-      return lesson;
-    }
-  }
-
-  return null;
+  return (await getLessonIndex()).get(lessonId) ?? null;
 }

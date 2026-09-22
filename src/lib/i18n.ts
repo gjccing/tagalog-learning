@@ -3,13 +3,7 @@ import zhTW from "../../langs/zh-TW.json";
 import type { Locale } from "./locales";
 
 export type { Locale } from "./locales";
-export {
-  defaultLocale,
-  isLocale,
-  locales,
-  replaceLocale,
-  withLang,
-} from "./locales";
+export { isLocale, locales, parseLocale, withLang } from "./locales";
 
 export type Dictionary = Record<string, string>;
 

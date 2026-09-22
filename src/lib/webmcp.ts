@@ -28,7 +28,7 @@ type ModelContext = {
   ): Promise<void>;
 };
 
-export function getModelContext(): ModelContext | null {
+function getModelContext(): ModelContext | null {
   if (typeof document === "undefined") return null;
 
   const ctx = (

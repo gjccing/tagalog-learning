@@ -79,11 +79,11 @@ export default async function LangLayout({
     notFound();
   }
 
-  const [curriculum, dict, catalog] = await Promise.all([
+  const [curriculum, catalog] = await Promise.all([
     getCurriculum(),
-    getDictionary(lang),
     getWebMcpCatalog(lang),
   ]);
+  const dict = getDictionary(lang);
 
   return (
     <html

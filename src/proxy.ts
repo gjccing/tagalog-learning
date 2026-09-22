@@ -40,7 +40,7 @@ export function proxy(request: NextRequest) {
   }
 
   const locale = getPreferredLocale(request);
-  request.nextUrl.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
+  request.nextUrl.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
 
@@ -48,6 +48,4 @@ export const proxyConfig = {
   matcher: ["/((?!_next|api|mcp|favicon.ico|.*\\..*).*)"],
 };
 
-export const config = {
-  matcher: ["/((?!_next|api|mcp|favicon.ico|.*\\..*).*)"],
-};
+export const config = proxyConfig;

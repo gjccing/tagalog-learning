@@ -49,10 +49,8 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     notFound();
   }
 
-  const [curriculum, dict] = await Promise.all([
-    getCurriculum(),
-    getDictionary(lang),
-  ]);
+  const curriculum = await getCurriculum();
+  const dict = getDictionary(lang);
 
   const courseName = t(dict, curriculum.course.title);
   const courseGoal = t(dict, curriculum.course.goal);
