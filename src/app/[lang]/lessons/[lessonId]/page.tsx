@@ -68,12 +68,16 @@ export default async function LessonPage({
 
   const { previous, next } = adjacent;
   const apkgHref = lessonApkgHref(located.ref.id, lang);
-  const tutorHref = await getChatgptTutorHref({
-    lang,
-    lesson,
-    located,
-    dict,
-  });
+  const tutorHref =
+    !isPronunciationLesson(lesson) &&
+    lessonNumberFromId(located.ref.id) !== 0
+      ? await getChatgptTutorHref({
+          lang,
+          lesson,
+          located,
+          dict,
+        })
+      : null;
 
   return (
     <div>
@@ -116,15 +120,23 @@ export default async function LessonPage({
         )}
       </div>
 
-      <section className="mt-10 space-y-4">
-        <h2 className="text-2xl font-semibold tracking-tight">
-          {t(dict, "Practice")}
-        </h2>
-        <div className={apkgHref ? "grid gap-3 sm:grid-cols-2" : undefined}>
+      {tutorHref ? (
+        <section className="mt-10 space-y-4">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            {t(dict, "Practice")}
+          </h2>
           <ChatGptTutor href={tutorHref} dict={dict} />
-          {apkgHref ? <AnkiDownload href={apkgHref} dict={dict} /> : null}
-        </div>
-      </section>
+        </section>
+      ) : null}
+
+      {apkgHref ? (
+        <section className="mt-10 space-y-4">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            {t(dict, "Review")}
+          </h2>
+          <AnkiDownload href={apkgHref} dict={dict} />
+        </section>
+      ) : null}
 
       <LessonNav lang={lang} dict={dict} previous={previous} next={next} />
     </div>
