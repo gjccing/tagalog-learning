@@ -41,3 +41,36 @@ export function pageAlternates(lang: Locale, pathname: string) {
     languages: languageAlternates(pathname),
   };
 }
+
+export function socialMetadata(
+  lang: Locale,
+  {
+    title,
+    description,
+    url,
+    type = "website",
+    siteName,
+  }: {
+    title: string;
+    description: string;
+    url?: string;
+    type?: "website" | "article";
+    siteName: string;
+  },
+) {
+  return {
+    openGraph: {
+      type,
+      locale: lang === "zh-TW" ? "zh_TW" : "en_US",
+      siteName,
+      title,
+      description,
+      ...(url ? { url } : {}),
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title,
+      description,
+    },
+  };
+}

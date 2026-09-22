@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
 import { getCurriculum, getStageHref } from "@/lib/content";
 import { getDictionary, isLocale, t } from "@/lib/i18n";
-import { pageAlternates } from "@/lib/site";
+import {
+  courseJsonLd,
+  graphJsonLd,
+  websiteJsonLd,
+} from "@/lib/json-ld";
+import { pageAlternates, socialMetadata } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -27,7 +33,12 @@ export async function generateMetadata({
     title: { absolute: title },
     description,
     alternates: pageAlternates(lang, "/"),
-    openGraph: { title, description, url: pageAlternates(lang, "/").canonical },
+    ...socialMetadata(lang, {
+      title,
+      description,
+      url: pageAlternates(lang, "/").canonical,
+      siteName: t(dict, "Practical Tagalog"),
+    }),
   };
 }
 
@@ -43,8 +54,34 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     getDictionary(lang),
   ]);
 
+  const courseName = t(dict, curriculum.course.title);
+  const courseGoal = t(dict, curriculum.course.goal);
+
   return (
     <div className="space-y-10">
+      <JsonLd
+        data={graphJsonLd(
+          websiteJsonLd(lang, courseName, courseGoal),
+          courseJsonLd(
+            lang,
+            {
+              ...curriculum,
+              course: {
+                ...curriculum.course,
+                title: courseName,
+                goal: courseGoal,
+              },
+              stages: curriculum.stages.map((stage) => ({
+                ...stage,
+                title: t(dict, stage.title),
+                goal: t(dict, stage.goal),
+              })),
+            },
+            courseName,
+            courseGoal,
+          ),
+        )}
+      />
       <section className="space-y-4">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
           {t(dict, "Course")}

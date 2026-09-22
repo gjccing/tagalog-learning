@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { WebMcpTools } from "@/components/WebMcpTools";
 import { getCurriculum } from "@/lib/content";
 import { getDictionary, isLocale, locales, t } from "@/lib/i18n";
+import { socialMetadata } from "@/lib/site";
 import { getWebMcpCatalog } from "@/lib/webmcp-catalog";
 
 export async function generateStaticParams() {
@@ -39,18 +40,11 @@ export async function generateMetadata({
       template: `%s · ${t(dict, curriculum.course.title)}`,
     },
     description,
-    openGraph: {
-      type: "website",
-      locale: lang === "zh-TW" ? "zh_TW" : "en_US",
+    ...socialMetadata(lang, {
+      title,
+      description,
       siteName: t(dict, curriculum.course.title),
-      title,
-      description,
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
+    }),
   };
 }
 

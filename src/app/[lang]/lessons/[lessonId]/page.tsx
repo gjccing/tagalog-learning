@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AnkiDownload } from "@/components/AnkiDownload";
 import { ChatGptTutor } from "@/components/ChatGptTutor";
+import { JsonLd } from "@/components/JsonLd";
 import { LessonNav } from "@/components/LessonNav";
 import { PronunciationLessonView } from "@/components/PronunciationLesson";
 import { StandardLessonView } from "@/components/StandardLesson";
@@ -17,7 +18,12 @@ import {
   lessonNumberFromId,
 } from "@/lib/content";
 import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
-import { pageAlternates } from "@/lib/site";
+import {
+  breadcrumbJsonLd,
+  graphJsonLd,
+  lessonJsonLd,
+} from "@/lib/json-ld";
+import { localizedPath, pageAlternates, socialMetadata } from "@/lib/site";
 import { isPronunciationLesson } from "@/lib/types";
 
 export async function generateStaticParams() {
@@ -59,11 +65,13 @@ export async function generateMetadata({
     title,
     description,
     alternates,
-    openGraph: {
+    ...socialMetadata(lang, {
       title,
       description,
       url: alternates.canonical,
-    },
+      type: "article",
+      siteName: t(dict, "Practical Tagalog"),
+    }),
   };
 }
 
@@ -100,8 +108,39 @@ export default async function LessonPage({
       })
       : null;
 
+  const courseName = t(dict, "Practical Tagalog");
+  const lessonTitle = t(dict, located.ref.title);
+  const breadcrumb = [
+    { name: courseName, path: localizedPath(lang, "/") },
+    ...(String(located.stage.id) === "0"
+      ? []
+      : [
+          {
+            name: t(dict, located.stage.title),
+            path: localizedPath(lang, `/stages/${located.stage.id}`),
+          },
+        ]),
+    {
+      name: lessonTitle,
+      path: localizedPath(lang, `/lessons/${located.ref.id}`),
+    },
+  ];
+
   return (
     <div>
+      <JsonLd
+        data={graphJsonLd(
+          lessonJsonLd(
+            lang,
+            located,
+            lessonTitle,
+            t(dict, located.ref.goal),
+            courseName,
+            t(dict, located.stage.title),
+          ),
+          breadcrumbJsonLd(breadcrumb),
+        )}
+      />
       <div className="space-y-3">
         <Link
           href={

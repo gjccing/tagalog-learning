@@ -7,8 +7,14 @@ import {
   getStageHref,
   lessonNumberFromId,
 } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
 import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
-import { pageAlternates } from "@/lib/site";
+import {
+  breadcrumbJsonLd,
+  graphJsonLd,
+  stageJsonLd,
+} from "@/lib/json-ld";
+import { localizedPath, pageAlternates, socialMetadata } from "@/lib/site";
 
 export async function generateStaticParams() {
   const curriculum = await getCurriculum();
@@ -49,11 +55,12 @@ export async function generateMetadata({
     title,
     description,
     alternates,
-    openGraph: {
+    ...socialMetadata(lang, {
       title,
       description,
       url: alternates.canonical,
-    },
+      siteName: t(dict, "Practical Tagalog"),
+    }),
   };
 }
 
@@ -80,8 +87,38 @@ export default async function StagePage({
     redirect(stageHref);
   }
 
+  const courseName = t(dict, "Practical Tagalog");
+  const stageTitle = t(dict, stage.title);
+
   return (
     <div className="space-y-8">
+      <JsonLd
+        data={graphJsonLd(
+          stageJsonLd(
+            lang,
+            {
+              ...stage,
+              title: stageTitle,
+              goal: t(dict, stage.goal),
+              lessons: stage.lessons.map((lesson) => ({
+                ...lesson,
+                title: t(dict, lesson.title),
+                goal: t(dict, lesson.goal),
+              })),
+            },
+            stageTitle,
+            t(dict, stage.goal),
+            courseName,
+          ),
+          breadcrumbJsonLd([
+            { name: courseName, path: localizedPath(lang, "/") },
+            {
+              name: stageTitle,
+              path: localizedPath(lang, `/stages/${stage.id}`),
+            },
+          ]),
+        )}
+      />
       <div className="space-y-3">
         <Link
           href={withLang(lang, "/")}
