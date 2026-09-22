@@ -24,13 +24,33 @@ export async function generateMetadata({
 
   const curriculum = await getCurriculum();
   const dict = getDictionary(lang);
+  const title = t(
+    dict,
+    "Practical Tagalog — Free everyday Tagalog lessons from A0 to A2",
+  );
+  const description = t(
+    dict,
+    "Learn practical Tagalog (Filipino) for everyday life. Free lessons with audio, Anki decks, and speaking practice.",
+  );
 
   return {
     title: {
-      default: t(dict, curriculum.course.title),
+      default: title,
       template: `%s · ${t(dict, curriculum.course.title)}`,
     },
-    description: t(dict, curriculum.course.goal),
+    description,
+    openGraph: {
+      type: "website",
+      locale: lang === "zh-TW" ? "zh_TW" : "en_US",
+      siteName: t(dict, curriculum.course.title),
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
   };
 }
 

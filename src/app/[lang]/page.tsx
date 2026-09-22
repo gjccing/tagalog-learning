@@ -1,7 +1,35 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCurriculum, getStageHref } from "@/lib/content";
 import { getDictionary, isLocale, t } from "@/lib/i18n";
+import { pageAlternates } from "@/lib/site";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) {
+    return { title: "Practical Tagalog" };
+  }
+
+  const dict = getDictionary(lang);
+  const title = t(
+    dict,
+    "Practical Tagalog — Free everyday Tagalog lessons from A0 to A2",
+  );
+  const description = t(
+    dict,
+    "Learn practical Tagalog (Filipino) for everyday life. Free lessons with audio, Anki decks, and speaking practice.",
+  );
+
+  return {
+    title: { absolute: title },
+    description,
+    alternates: pageAlternates(lang, "/"),
+    openGraph: { title, description, url: pageAlternates(lang, "/").canonical },
+  };
+}
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;

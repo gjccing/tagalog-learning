@@ -17,6 +17,7 @@ import {
   lessonNumberFromId,
 } from "@/lib/content";
 import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
+import { pageAlternates } from "@/lib/site";
 import { isPronunciationLesson } from "@/lib/types";
 
 export async function generateStaticParams() {
@@ -40,9 +41,29 @@ export async function generateMetadata({
   }
 
   const dict = await getDictionary(lang);
-  return {
+  const title = t(dict, "{title} · Lesson {n} Tagalog", {
     title: t(dict, located.ref.title),
-    description: t(dict, located.ref.goal),
+    n: lessonNumberFromId(located.ref.id),
+  });
+  const description = t(
+    dict,
+    "Learn {title} in Tagalog. {goal} Includes vocabulary, useful sentences, and audio.",
+    {
+      title: t(dict, located.ref.title),
+      goal: t(dict, located.ref.goal),
+    },
+  );
+  const alternates = pageAlternates(lang, `/lessons/${located.ref.id}`);
+
+  return {
+    title,
+    description,
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+    },
   };
 }
 

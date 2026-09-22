@@ -8,6 +8,7 @@ import {
   lessonNumberFromId,
 } from "@/lib/content";
 import { getDictionary, isLocale, locales, t, withLang } from "@/lib/i18n";
+import { pageAlternates } from "@/lib/site";
 
 export async function generateStaticParams() {
   const curriculum = await getCurriculum();
@@ -30,9 +31,29 @@ export async function generateMetadata({
   }
 
   const dict = await getDictionary(lang);
-  return {
+  const title = t(dict, "{title} ({level})", {
     title: t(dict, stage.title),
-    description: t(dict, stage.goal),
+    level: t(dict, stage.level),
+  });
+  const description = t(
+    dict,
+    "{goal} {count} Tagalog lessons for everyday life.",
+    {
+      goal: t(dict, stage.goal),
+      count: stage.lessons.length,
+    },
+  );
+  const alternates = pageAlternates(lang, `/stages/${stage.id}`);
+
+  return {
+    title,
+    description,
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+    },
   };
 }
 

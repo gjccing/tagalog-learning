@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_TC } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { getSiteUrl } from "@/lib/site";
 
 import "./globals.css";
 
@@ -19,6 +21,10 @@ const notoSansTC = Noto_Sans_TC({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
+};
 
 export default function RootLayout({
   children,
