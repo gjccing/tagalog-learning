@@ -3,7 +3,7 @@
   "stage": 1,
   "level": "A0",
   "title": "Hello and Introductions",
-  "goal": "Greet someone and give a very simple introduction.",
+  "goal": "Greet someone, ask their name and where they are from, and give a very simple introduction.",
   "vocabulary": [
     {
       "tagalog": "Kumusta?",
@@ -18,12 +18,28 @@
       "english": "you"
     },
     {
+      "tagalog": "ka",
+      "english": "you (in questions)"
+    },
+    {
       "tagalog": "pangalan",
       "english": "name"
     },
     {
+      "tagalog": "ano",
+      "english": "what"
+    },
+    {
+      "tagalog": "mo",
+      "english": "your"
+    },
+    {
       "tagalog": "taga-",
       "english": "from / native of"
+    },
+    {
+      "tagalog": "saan",
+      "english": "where"
     },
     {
       "tagalog": "mabuti",
@@ -36,6 +52,18 @@
       "english": "How are you? / Hello"
     },
     {
+      "tagalog": "Mabuti ako.",
+      "english": "I am fine."
+    },
+    {
+      "tagalog": "Ikaw?",
+      "english": "How about you?"
+    },
+    {
+      "tagalog": "Ano ang pangalan mo?",
+      "english": "What is your name?"
+    },
+    {
       "tagalog": "Ako si Anna.",
       "english": "I am Anna."
     },
@@ -44,19 +72,17 @@
       "english": "My name is Anna."
     },
     {
+      "tagalog": "Taga-saan ka?",
+      "english": "Where are you from?"
+    },
+    {
       "tagalog": "Taga-Taiwan ako.",
       "english": "I am from Taiwan."
-    },
-    {
-      "tagalog": "Mabuti ako.",
-      "english": "I am fine."
-    },
-    {
-      "tagalog": "Ikaw?",
-      "english": "How about you?"
     }
   ],
-  "notes": [],
+  "notes": [
+    "In a question, use ka instead of ikaw, as in Taga-saan ka? Use mo for your, as in Ano ang pangalan mo?"
+  ],
   "practice": {
     "objectives": [
       {
@@ -64,12 +90,20 @@
         "description": "Greet someone naturally using Kumusta?"
       },
       {
+        "id": "ask-name",
+        "description": "Ask someone what their name is."
+      },
+      {
         "id": "introduce-name",
         "description": "Introduce yourself by name."
       },
       {
+        "id": "ask-origin",
+        "description": "Ask someone where they are from."
+      },
+      {
         "id": "say-origin",
-        "description": "Say that you are from Taiwan."
+        "description": "Say where you are from."
       },
       {
         "id": "respond-how-are-you",
@@ -81,10 +115,12 @@
         "id": "first-meeting",
         "title": "Meeting someone for the first time",
         "setup": "You meet a new person in a casual setting.",
-        "learnerGoal": "Greet them, say your name, say where you are from, and respond when they ask how you are.",
+        "learnerGoal": "Greet them, ask their name, say your name, ask where they are from, say where you are from, and respond when they ask how you are.",
         "targets": [
           "Kumusta?",
+          "Ano ang pangalan mo?",
           "Ako si Anna.",
+          "Taga-saan ka?",
           "Taga-Taiwan ako.",
           "Mabuti ako.",
           "Ikaw?"
@@ -94,10 +130,12 @@
         "id": "simple-introduction",
         "title": "Simple self-introduction",
         "setup": "Someone asks who you are.",
-        "learnerGoal": "Give a short self-introduction without being shown the full answer first.",
+        "learnerGoal": "Answer their questions and give a short self-introduction without being shown the full answer first.",
         "targets": [
+          "Ano ang pangalan mo?",
           "Ako si Anna.",
           "Ang pangalan ko ay Anna.",
+          "Taga-saan ka?",
           "Taga-Taiwan ako."
         ]
       }

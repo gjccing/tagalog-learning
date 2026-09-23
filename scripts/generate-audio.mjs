@@ -14,7 +14,7 @@ import * as googleTTS from "@sefinek/google-tts-api";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LESSONS_DIR = path.join(ROOT, "content", "lessons");
-const AUDIO_DIR = path.join(ROOT, "public", "audio");
+const AUDIO_DIR = path.join(ROOT, "public", "audios");
 const TTS_LANG = "tl";
 const TTS_SLOW = false;
 const TTS_HOST = "https://translate.google.com";

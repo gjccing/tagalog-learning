@@ -73,6 +73,5 @@ export async function getChatgptTutorHref({
   );
   const url = new URL("https://chatgpt.com/");
   url.searchParams.set("q", prompt);
-  url.searchParams.set("temporary-chat", "true");
   return url.toString();
 }
